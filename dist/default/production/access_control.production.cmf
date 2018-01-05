@@ -1,0 +1,578 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\access_control.production.obj
+cinit CODE 0 11 11 1C 2
+text1 CODE 0 1FA 1FA A 2
+text2 CODE 0 204 204 A 2
+text3 CODE 0 192 192 11 2
+text4 CODE 0 35 35 6E 2
+text5 CODE 0 20E 20E 9 2
+text6 CODE 0 16C 16C 13 2
+text7 CODE 0 12A 12A 29 2
+text8 CODE 0 D4 D4 2B 2
+text9 CODE 0 17F 17F 13 2
+text10 CODE 0 1ED 1ED D 2
+text11 CODE 0 1B3 1B3 F 2
+text12 CODE 0 220 220 8 2
+text13 CODE 0 235 235 3 2
+text14 CODE 0 239 239 1 2
+text15 CODE 0 FF FF 2B 2
+text16 CODE 0 217 217 9 2
+text17 CODE 0 228 228 7 2
+text18 CODE 0 1DF 1DF E 2
+text19 CODE 0 1C2 1C2 F 2
+text20 CODE 0 153 153 19 2
+text21 CODE 0 1A3 1A3 10 2
+text22 CODE 0 A3 A3 31 2
+idataCOMMON CODE 0 238 238 1 2
+maintext CODE 0 1D1 1D1 E 2
+cstackCOMMON COMMON 1 70 70 7 1
+cstackBANK0 BANK0 1 2A 2A A 1
+intentry CODE 0 4 4 C 2
+bssBANK0 BANK0 1 20 20 A 1
+idataBANK0 CODE 0 22F 22F 6 2
+dataBANK0 BANK0 1 34 34 6 1
+dataCOMMON COMMON 1 79 79 1 1
+functab ENTRY 0 2D 2D 8 2
+bssCOMMON COMMON 1 77 77 2 1
+$C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+reset_vec CODE 0 0 0 1 2
+end_init CODE 0 10 10 1 2
+config CONFIG 0 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 3A-6F 1
+RAM A0-EF 1
+RAM 120-14F 1
+BANK0 3A-6F 1
+BANK1 A0-EF 1
+BANK2 120-14F 1
+CONST 1-3 2
+CONST 23A-7FF 2
+ENTRY 1-3 2
+ENTRY 23A-7FF 2
+IDLOC 2000-2003 2
+STACK A0-EF 1
+CODE 1-3 2
+CODE 23A-7FF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-1EF 1
+COMMON 7A-7D 1
+EEDATA 2100-217F 2
+STRCODE 1-3 2
+STRCODE 23A-7FF 2
+STRING 1-3 2
+STRING 23A-7FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\access_control.production.obj
+11 cinit CODE >579:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+11 cinit CODE >582:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+11 cinit CODE >634:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+12 cinit CODE >635:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+13 cinit CODE >636:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+14 cinit CODE >637:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+15 cinit CODE >638:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+16 cinit CODE >639:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+17 cinit CODE >640:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+18 cinit CODE >641:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+19 cinit CODE >642:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+1A cinit CODE >643:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+1B cinit CODE >644:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+1C cinit CODE >645:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+1D cinit CODE >649:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+1E cinit CODE >650:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+1F cinit CODE >654:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+20 cinit CODE >655:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+21 cinit CODE >656:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+22 cinit CODE >657:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+23 cinit CODE >658:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+24 cinit CODE >659:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+25 cinit CODE >660:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+26 cinit CODE >661:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+27 cinit CODE >662:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+28 cinit CODE >663:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+29 cinit CODE >666:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2A cinit CODE >667:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2B cinit CODE >673:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2B cinit CODE >675:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2C cinit CODE >676:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2D functab ENTRY >3379:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2D functab ENTRY >3381:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2D functab ENTRY >3382:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2D functab ENTRY >3383:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2E functab ENTRY >3384:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+2F functab ENTRY >3385:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+30 functab ENTRY >3386:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+31 functab ENTRY >3387:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+32 functab ENTRY >3389:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+32 functab ENTRY >3390:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+33 functab ENTRY >3393:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+33 functab ENTRY >3394:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+33 functab ENTRY >3396:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+34 functab ENTRY >3399:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+34 functab ENTRY >3400:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+34 functab ENTRY >3402:C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.
+4 intentry CODE >15:F:\workspace\access_control\timer.c
+A3 text22 CODE >15:F:\workspace\access_control\timer.c
+A3 text22 CODE >17:F:\workspace\access_control\timer.c
+A5 text22 CODE >19:F:\workspace\access_control\timer.c
+A6 text22 CODE >21:F:\workspace\access_control\timer.c
+AA text22 CODE >22:F:\workspace\access_control\timer.c
+B0 text22 CODE >24:F:\workspace\access_control\timer.c
+B4 text22 CODE >25:F:\workspace\access_control\timer.c
+BA text22 CODE >27:F:\workspace\access_control\timer.c
+BE text22 CODE >28:F:\workspace\access_control\timer.c
+C4 text22 CODE >30:F:\workspace\access_control\timer.c
+C7 text22 CODE >31:F:\workspace\access_control\timer.c
+C9 text22 CODE >33:F:\workspace\access_control\timer.c
+1A3 text21 CODE >123:F:\workspace\access_control\cancela/cancela.c
+1A3 text21 CODE >126:F:\workspace\access_control\cancela/cancela.c
+1A9 text21 CODE >129:F:\workspace\access_control\cancela/cancela.c
+1AD text21 CODE >131:F:\workspace\access_control\cancela/cancela.c
+1B0 text21 CODE >133:F:\workspace\access_control\cancela/cancela.c
+1B1 text21 CODE >134:F:\workspace\access_control\cancela/cancela.c
+1B2 text21 CODE >135:F:\workspace\access_control\cancela/cancela.c
+153 text20 CODE >69:F:\workspace\access_control\motor/motor.c
+156 text20 CODE >71:F:\workspace\access_control\motor/motor.c
+15E text20 CODE >72:F:\workspace\access_control\motor/motor.c
+165 text20 CODE >73:F:\workspace\access_control\motor/motor.c
+16B text20 CODE >74:F:\workspace\access_control\motor/motor.c
+1C2 text19 CODE >84:F:\workspace\access_control\cancela/cancela.c
+1C2 text19 CODE >86:F:\workspace\access_control\cancela/cancela.c
+1C8 text19 CODE >88:F:\workspace\access_control\cancela/cancela.c
+1D0 text19 CODE >89:F:\workspace\access_control\cancela/cancela.c
+1DF text18 CODE >71:F:\workspace\access_control\cancela/cancela.c
+1DF text18 CODE >73:F:\workspace\access_control\cancela/cancela.c
+1E5 text18 CODE >75:F:\workspace\access_control\cancela/cancela.c
+1EC text18 CODE >76:F:\workspace\access_control\cancela/cancela.c
+228 text17 CODE >179:F:\workspace\access_control\cancela/cancela.c
+228 text17 CODE >181:F:\workspace\access_control\cancela/cancela.c
+217 text16 CODE >157:F:\workspace\access_control\cancela/cancela.c
+217 text16 CODE >159:F:\workspace\access_control\cancela/cancela.c
+FF text15 CODE >29:F:\workspace\access_control\cancela/cancela.c
+FF text15 CODE >31:F:\workspace\access_control\cancela/cancela.c
+102 text15 CODE >33:F:\workspace\access_control\cancela/cancela.c
+108 text15 CODE >35:F:\workspace\access_control\cancela/cancela.c
+109 text15 CODE >37:F:\workspace\access_control\cancela/cancela.c
+111 text15 CODE >39:F:\workspace\access_control\cancela/cancela.c
+112 text15 CODE >41:F:\workspace\access_control\cancela/cancela.c
+118 text15 CODE >44:F:\workspace\access_control\cancela/cancela.c
+11D text15 CODE >46:F:\workspace\access_control\cancela/cancela.c
+121 text15 CODE >48:F:\workspace\access_control\cancela/cancela.c
+127 text15 CODE >50:F:\workspace\access_control\cancela/cancela.c
+128 text15 CODE >52:F:\workspace\access_control\cancela/cancela.c
+129 text15 CODE >54:F:\workspace\access_control\cancela/cancela.c
+239 text14 CODE >62:F:\workspace\access_control\cancela/cancela.c
+239 text14 CODE >63:F:\workspace\access_control\cancela/cancela.c
+235 text13 CODE >17:F:\workspace\access_control\cancela/cancela.c
+235 text13 CODE >19:F:\workspace\access_control\cancela/cancela.c
+236 text13 CODE >21:F:\workspace\access_control\cancela/cancela.c
+237 text13 CODE >22:F:\workspace\access_control\cancela/cancela.c
+220 text12 CODE >25:F:\workspace\access_control\ihm/key.c
+220 text12 CODE >27:F:\workspace\access_control\ihm/key.c
+223 text12 CODE >29:F:\workspace\access_control\ihm/key.c
+227 text12 CODE >30:F:\workspace\access_control\ihm/key.c
+1B3 text11 CODE >10:F:\workspace\access_control\ihm/key.c
+1B3 text11 CODE >12:F:\workspace\access_control\ihm/key.c
+1B7 text11 CODE >14:F:\workspace\access_control\ihm/key.c
+1BB text11 CODE >17:F:\workspace\access_control\ihm/key.c
+1ED text10 CODE >82:F:\workspace\access_control\motor/motor.c
+1EE text10 CODE >84:F:\workspace\access_control\motor/motor.c
+1F6 text10 CODE >85:F:\workspace\access_control\motor/motor.c
+1F9 text10 CODE >86:F:\workspace\access_control\motor/motor.c
+17F text9 CODE >121:F:\workspace\access_control\motor/motor.c
+17F text9 CODE >124:F:\workspace\access_control\motor/motor.c
+185 text9 CODE >126:F:\workspace\access_control\motor/motor.c
+188 text9 CODE >127:F:\workspace\access_control\motor/motor.c
+189 text9 CODE >128:F:\workspace\access_control\motor/motor.c
+18D text9 CODE >130:F:\workspace\access_control\motor/motor.c
+18F text9 CODE >131:F:\workspace\access_control\motor/motor.c
+191 text9 CODE >132:F:\workspace\access_control\motor/motor.c
+D4 text8 CODE >108:F:\workspace\access_control\motor/motor.c
+D4 text8 CODE >110:F:\workspace\access_control\motor/motor.c
+E0 text8 CODE >111:F:\workspace\access_control\motor/motor.c
+EB text8 CODE >112:F:\workspace\access_control\motor/motor.c
+F5 text8 CODE >113:F:\workspace\access_control\motor/motor.c
+FE text8 CODE >114:F:\workspace\access_control\motor/motor.c
+12A text7 CODE >94:F:\workspace\access_control\motor/motor.c
+12A text7 CODE >96:F:\workspace\access_control\motor/motor.c
+135 text7 CODE >97:F:\workspace\access_control\motor/motor.c
+13D text7 CODE >98:F:\workspace\access_control\motor/motor.c
+147 text7 CODE >99:F:\workspace\access_control\motor/motor.c
+152 text7 CODE >100:F:\workspace\access_control\motor/motor.c
+16C text6 CODE >139:F:\workspace\access_control\motor/motor.c
+16C text6 CODE >142:F:\workspace\access_control\motor/motor.c
+172 text6 CODE >144:F:\workspace\access_control\motor/motor.c
+175 text6 CODE >145:F:\workspace\access_control\motor/motor.c
+176 text6 CODE >146:F:\workspace\access_control\motor/motor.c
+17A text6 CODE >148:F:\workspace\access_control\motor/motor.c
+17C text6 CODE >149:F:\workspace\access_control\motor/motor.c
+17E text6 CODE >150:F:\workspace\access_control\motor/motor.c
+20E text5 CODE >157:F:\workspace\access_control\motor/motor.c
+20E text5 CODE >159:F:\workspace\access_control\motor/motor.c
+214 text5 CODE >160:F:\workspace\access_control\motor/motor.c
+215 text5 CODE >161:F:\workspace\access_control\motor/motor.c
+216 text5 CODE >162:F:\workspace\access_control\motor/motor.c
+35 text4 CODE >30:F:\workspace\access_control\motor/motor.c
+38 text4 CODE >34:F:\workspace\access_control\motor/motor.c
+40 text4 CODE >36:F:\workspace\access_control\motor/motor.c
+41 text4 CODE >38:F:\workspace\access_control\motor/motor.c
+42 text4 CODE >40:F:\workspace\access_control\motor/motor.c
+47 text4 CODE >42:F:\workspace\access_control\motor/motor.c
+54 text4 CODE >44:F:\workspace\access_control\motor/motor.c
+5A text4 CODE >46:F:\workspace\access_control\motor/motor.c
+73 text4 CODE >50:F:\workspace\access_control\motor/motor.c
+90 text4 CODE >53:F:\workspace\access_control\motor/motor.c
+93 text4 CODE >54:F:\workspace\access_control\motor/motor.c
+98 text4 CODE >58:F:\workspace\access_control\motor/motor.c
+192 text3 CODE >12:F:\workspace\access_control\motor/motor.c
+192 text3 CODE >14:F:\workspace\access_control\motor/motor.c
+198 text3 CODE >16:F:\workspace\access_control\motor/motor.c
+19A text3 CODE >17:F:\workspace\access_control\motor/motor.c
+19C text3 CODE >19:F:\workspace\access_control\motor/motor.c
+204 text2 CODE >142:F:\workspace\access_control\cancela/cancela.c
+204 text2 CODE >144:F:\workspace\access_control\cancela/cancela.c
+207 text2 CODE >146:F:\workspace\access_control\cancela/cancela.c
+20B text2 CODE >148:F:\workspace\access_control\cancela/cancela.c
+20D text2 CODE >149:F:\workspace\access_control\cancela/cancela.c
+1FA text1 CODE >54:F:\workspace\access_control\timer.c
+1FA text1 CODE >56:F:\workspace\access_control\timer.c
+1FE text1 CODE >57:F:\workspace\access_control\timer.c
+202 text1 CODE >58:F:\workspace\access_control\timer.c
+203 text1 CODE >59:F:\workspace\access_control\timer.c
+1D1 maintext CODE >16:F:\workspace\access_control\main.c
+1D1 maintext CODE >18:F:\workspace\access_control\main.c
+1D2 maintext CODE >20:F:\workspace\access_control\main.c
+1D3 maintext CODE >22:F:\workspace\access_control\main.c
+1D4 maintext CODE >24:F:\workspace\access_control\main.c
+1D5 maintext CODE >26:F:\workspace\access_control\main.c
+1D6 maintext CODE >28:F:\workspace\access_control\main.c
+1D6 maintext CODE >31:F:\workspace\access_control\main.c
+1D7 maintext CODE >33:F:\workspace\access_control\main.c
+1D8 maintext CODE >35:F:\workspace\access_control\main.c
+1D9 maintext CODE >37:F:\workspace\access_control\main.c
+1DD maintext CODE >39:F:\workspace\access_control\main.c
+1DE maintext CODE >28:F:\workspace\access_control\main.c
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 0 0 ABS 0 - dist/default/production\access_control.production.obj
+entry__motor_entrada_set 66 0 ENTRY 0 functab dist/default/production\access_control.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 7A 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+_request_print_ticket 408 0 CODE 0 text2 dist/default/production\access_control.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__size_of_cancela_entrada_close 0 0 ABS 0 - dist/default/production\access_control.production.obj
+motor_start@motor 2A 0 BANK0 1 cstackBANK0 dist/default/production\access_control.production.obj
+__Hstrings 0 0 ABS 0 strings -
+_TMR0 1 0 ABS 0 - dist/default/production\access_control.production.obj
+___sp 0 0 STACK 2 stack C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+_main 3A2 0 CODE 0 maintext dist/default/production\access_control.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\access_control.production.obj
+start 20 0 CODE 0 init C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+__pfunctab 5A 0 ENTRY 0 functab dist/default/production\access_control.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+motor_saida_set@val 74 0 COMMON 1 cstackCOMMON dist/default/production\access_control.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__Hpowerup 0 0 CODE 0 powerup -
+__size_of_motor_saida_set 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__end_of_ticket_ok 45E 0 CODE 0 text17 dist/default/production\access_control.production.obj
+__size_of_motor_start 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__size_of_ticket_ok 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+intlevel0 5A 0 ENTRY 0 functab C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+intlevel1 5A 0 ENTRY 0 functab C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+intlevel2 5A 0 ENTRY 0 functab C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+intlevel3 5A 0 ENTRY 0 functab C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+intlevel4 5A 0 ENTRY 0 functab C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+intlevel5 5A 0 ENTRY 0 functab C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+_motor_init 41C 0 CODE 0 text5 dist/default/production\access_control.production.obj
+_motor_task 324 0 CODE 0 text3 dist/default/production\access_control.production.obj
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+wtemp0 7E 0 ABS 0 - dist/default/production\access_control.production.obj
+_timer0_init 3F4 0 CODE 0 text1 dist/default/production\access_control.production.obj
+__Hfunctab 6A 0 ENTRY 0 functab -
+_ticket_ok 450 0 CODE 0 text17 dist/default/production\access_control.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+__pidataCOMMON 470 0 CODE 0 idataCOMMON dist/default/production\access_control.production.obj
+_motor_entrada_set 254 0 CODE 0 text7 dist/default/production\access_control.production.obj
+_motor_entrada 25 0 BANK0 1 bssBANK0 dist/default/production\access_control.production.obj
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+__size_of_motor_entrada_init 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+__size_of_ihm_init 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__end_of_motor_init 42E 0 CODE 0 text5 dist/default/production\access_control.production.obj
+__end_of_motor_task 346 0 CODE 0 text3 dist/default/production\access_control.production.obj
+_OPTION_REG 81 0 ABS 0 - dist/default/production\access_control.production.obj
+__size_of_handle_cancela_entrada 0 0 ABS 0 - dist/default/production\access_control.production.obj
+_timer_signal 38 0 BANK0 1 dataBANK0 dist/default/production\access_control.production.obj
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+__size_of_key_read 0 0 ABS 0 - dist/default/production\access_control.production.obj
+start_initialization 22 0 CODE 0 cinit dist/default/production\access_control.production.obj
+__CFG_FOSC$INTOSCIO 0 0 ABS 0 - dist/default/production\access_control.production.obj
+_motor_saida_init 2D8 0 CODE 0 text6 dist/default/production\access_control.production.obj
+__pcstackBANK0 2A 0 BANK0 1 cstackBANK0 dist/default/production\access_control.production.obj
+_ihm_init 440 0 CODE 0 text12 dist/default/production\access_control.production.obj
+__end_of_ihm_init 450 0 CODE 0 text12 dist/default/production\access_control.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Hcinit 5A 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__end_of_tc_int 1A8 0 CODE 0 text22 dist/default/production\access_control.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+_key_read 366 0 CODE 0 text11 dist/default/production\access_control.production.obj
+_handle_cancela_saida 472 0 CODE 0 text14 dist/default/production\access_control.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+_cancela_entrada 78 0 COMMON 1 bssCOMMON dist/default/production\access_control.production.obj
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 BANK3 1 bank3 -
+__Lcinit 22 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+_motor_saida 20 0 BANK0 1 bssBANK0 dist/default/production\access_control.production.obj
+_motor_start 2A6 0 CODE 0 text20 dist/default/production\access_control.production.obj
+__Lstack 0 0 STACK 2 stack -
+__size_of__fptable 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__end_of_key_read 384 0 CODE 0 text11 dist/default/production\access_control.production.obj
+__size_of_cancela_entrada_open 0 0 ABS 0 - dist/default/production\access_control.production.obj
+_PORTAbits 5 0 ABS 0 - dist/default/production\access_control.production.obj
+_PORTBbits 6 0 ABS 0 - dist/default/production\access_control.production.obj
+_INTCONbits B 0 ABS 0 - dist/default/production\access_control.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 20 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 20 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__S0 2008 0 ABS 0 - -
+__S1 7A 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__end_of_cancela_entrada_open 3DA 0 CODE 0 text18 dist/default/production\access_control.production.obj
+saved_w 7E 0 ABS 0 - dist/default/production\access_control.production.obj
+__end_of_motor_saida_init 2FE 0 CODE 0 text6 dist/default/production\access_control.production.obj
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+__size_of_motor_saida_init 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__end_of_timer0_init 408 0 CODE 0 text1 dist/default/production\access_control.production.obj
+__Lintentry 8 0 CODE 0 intentry -
+__size_of_request_print_ticket 0 0 ABS 0 - dist/default/production\access_control.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+__fptable 5A 0 ENTRY 0 functab dist/default/production\access_control.production.obj
+__pdataBANK0 34 0 BANK0 1 dataBANK0 dist/default/production\access_control.production.obj
+__size_of_motor_init 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__size_of_motor_task 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+_veiculo_presente_entrada 42E 0 CODE 0 text16 dist/default/production\access_control.production.obj
+_timer_close 36 0 BANK0 1 dataBANK0 dist/default/production\access_control.production.obj
+__end_of_cancela_entrada_close 3A2 0 CODE 0 text19 dist/default/production\access_control.production.obj
+_timer_motor 34 0 BANK0 1 dataBANK0 dist/default/production\access_control.production.obj
+_PIE1bits 8C 0 ABS 0 - dist/default/production\access_control.production.obj
+__end_of__fptable 6A 0 ENTRY 0 functab dist/default/production\access_control.production.obj
+__end_of_request_print_ticket 41C 0 CODE 0 text2 dist/default/production\access_control.production.obj
+__ptext10 3DA 0 CODE 0 text10 dist/default/production\access_control.production.obj
+__ptext11 366 0 CODE 0 text11 dist/default/production\access_control.production.obj
+__ptext12 440 0 CODE 0 text12 dist/default/production\access_control.production.obj
+__ptext13 46A 0 CODE 0 text13 dist/default/production\access_control.production.obj
+__ptext14 472 0 CODE 0 text14 dist/default/production\access_control.production.obj
+__ptext15 1FE 0 CODE 0 text15 dist/default/production\access_control.production.obj
+__ptext16 42E 0 CODE 0 text16 dist/default/production\access_control.production.obj
+__ptext17 450 0 CODE 0 text17 dist/default/production\access_control.production.obj
+__ptext18 3BE 0 CODE 0 text18 dist/default/production\access_control.production.obj
+__ptext19 384 0 CODE 0 text19 dist/default/production\access_control.production.obj
+__ptext20 2A6 0 CODE 0 text20 dist/default/production\access_control.production.obj
+__ptext21 346 0 CODE 0 text21 dist/default/production\access_control.production.obj
+__ptext22 146 0 CODE 0 text22 dist/default/production\access_control.production.obj
+__end_of_motor_off 3F4 0 CODE 0 text10 dist/default/production\access_control.production.obj
+__pmaintext 3A2 0 CODE 0 maintext dist/default/production\access_control.production.obj
+__size_of_motor_off 0 0 ABS 0 - dist/default/production\access_control.production.obj
+_cancela_entrada_close 384 0 CODE 0 text19 dist/default/production\access_control.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\access_control.production.obj
+_motor_handle 6A 0 CODE 0 text4 dist/default/production\access_control.production.obj
+_tc_int 146 0 CODE 0 text22 dist/default/production\access_control.production.obj
+_handle_cancela_entrada 1FE 0 CODE 0 text15 dist/default/production\access_control.production.obj
+_motor_off 3DA 0 CODE 0 text10 dist/default/production\access_control.production.obj
+stackhi 0 0 ABS 0 - C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+stacklo 0 0 ABS 0 - C:\Users\JEFFER~1\AppData\Local\Temp\sc1k.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production\access_control.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+_PIR1bits C 0 ABS 0 - dist/default/production\access_control.production.obj
+__Lend_init 20 0 CODE 0 end_init -
+__CFG_LVP$ON 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_cancela_init 346 0 CODE 0 text21 dist/default/production\access_control.production.obj
+_cancela_task 46A 0 CODE 0 text13 dist/default/production\access_control.production.obj
+end_of_initialization 56 0 CODE 0 cinit dist/default/production\access_control.production.obj
+__size_of_motor_handle 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__Hintentry 20 0 CODE 0 intentry -
+fptable 5A 0 ENTRY 0 functab dist/default/production\access_control.production.obj
+fptotal 4 0 ABS 0 - dist/default/production\access_control.production.obj
+_debounce_botao 79 0 COMMON 1 dataCOMMON dist/default/production\access_control.production.obj
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__size_of_motor_entrada_set 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__size_of_tc_int 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__ptext1 3F4 0 CODE 0 text1 dist/default/production\access_control.production.obj
+__ptext2 408 0 CODE 0 text2 dist/default/production\access_control.production.obj
+__ptext3 324 0 CODE 0 text3 dist/default/production\access_control.production.obj
+__ptext4 6A 0 CODE 0 text4 dist/default/production\access_control.production.obj
+__ptext5 41C 0 CODE 0 text5 dist/default/production\access_control.production.obj
+__ptext6 2D8 0 CODE 0 text6 dist/default/production\access_control.production.obj
+__ptext7 254 0 CODE 0 text7 dist/default/production\access_control.production.obj
+__ptext8 1A8 0 CODE 0 text8 dist/default/production\access_control.production.obj
+__ptext9 2FE 0 CODE 0 text9 dist/default/production\access_control.production.obj
+__end_of_motor_entrada_init 324 0 CODE 0 text9 dist/default/production\access_control.production.obj
+motor_entrada_set@val 74 0 COMMON 1 cstackCOMMON dist/default/production\access_control.production.obj
+__end_of_motor_handle 146 0 CODE 0 text4 dist/default/production\access_control.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_motor_saida_set 1FE 0 CODE 0 text8 dist/default/production\access_control.production.obj
+motor_start@voltas 75 0 COMMON 1 cstackCOMMON dist/default/production\access_control.production.obj
+motor_off@motor 75 0 COMMON 1 cstackCOMMON dist/default/production\access_control.production.obj
+__size_of_veiculo_presente_entrada 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__size_of_cancela_init 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__size_of_cancela_task 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__size_of_timer0_init 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__CFG_WDTE$ON 0 0 ABS 0 - dist/default/production\access_control.production.obj
+motor_start@direction 74 0 COMMON 1 cstackCOMMON dist/default/production\access_control.production.obj
+_cancela_saida 77 0 COMMON 1 bssCOMMON dist/default/production\access_control.production.obj
+__end_of__initialization 56 0 CODE 0 cinit dist/default/production\access_control.production.obj
+__Lfunctab 5A 0 ENTRY 0 functab -
+__end_of_motor_start 2D8 0 CODE 0 text20 dist/default/production\access_control.production.obj
+entry__motor_saida_set 68 0 ENTRY 0 functab dist/default/production\access_control.production.obj
+__pidataBANK0 45E 0 CODE 0 idataBANK0 dist/default/production\access_control.production.obj
+__Lclrtext 0 0 ABS 0 clrtext -
+_motor_entrada_init 2FE 0 CODE 0 text9 dist/default/production\access_control.production.obj
+__end_of_cancela_init 366 0 CODE 0 text21 dist/default/production\access_control.production.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\access_control.production.obj
+__end_of_cancela_task 470 0 CODE 0 text13 dist/default/production\access_control.production.obj
+_motor_handle$420 2D 0 BANK0 1 cstackBANK0 dist/default/production\access_control.production.obj
+_motor_handle$421 2F 0 BANK0 1 cstackBANK0 dist/default/production\access_control.production.obj
+motor_handle@coils 31 0 BANK0 1 cstackBANK0 dist/default/production\access_control.production.obj
+motor_handle@motor 33 0 BANK0 1 cstackBANK0 dist/default/production\access_control.production.obj
+__Hend_init 22 0 CODE 0 end_init -
+__end_of_main 3BE 0 CODE 0 maintext dist/default/production\access_control.production.obj
+_motor_saida_set 1A8 0 CODE 0 text8 dist/default/production\access_control.production.obj
+_T1CON 10 0 ABS 0 - dist/default/production\access_control.production.obj
+_TRISA 85 0 ABS 0 - dist/default/production\access_control.production.obj
+_TRISB 86 0 ABS 0 - dist/default/production\access_control.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production\access_control.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\access_control.production.obj
+_cancela_entrada_open 3BE 0 CODE 0 text18 dist/default/production\access_control.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production\access_control.production.obj
+motor_handle@step 32 0 BANK0 1 cstackBANK0 dist/default/production\access_control.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__size_of_handle_cancela_saida 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__initialization 22 0 CODE 0 cinit dist/default/production\access_control.production.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\access_control.production.obj
+__pbssBANK0 20 0 BANK0 1 bssBANK0 dist/default/production\access_control.production.obj
+__pdataCOMMON 79 0 COMMON 1 dataCOMMON dist/default/production\access_control.production.obj
+__end_of_handle_cancela_entrada 254 0 CODE 0 text15 dist/default/production\access_control.production.obj
+fpbase 64 0 ENTRY 0 functab dist/default/production\access_control.production.obj
+__end_of_veiculo_presente_entrada 440 0 CODE 0 text16 dist/default/production\access_control.production.obj
+__end_of_motor_entrada_set 2A6 0 CODE 0 text7 dist/default/production\access_control.production.obj
+__end_of_handle_cancela_saida 474 0 CODE 0 text14 dist/default/production\access_control.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text4 0 35 6A 205 2
+cstackCOMMON 1 70 70 A 1
+intentry 0 4 8 29 2
+reset_vec 0 0 0 1 2
+bssBANK0 1 20 20 1A 1
+functab 0 2D 5A 8 2
+config 0 2007 400E 1 2

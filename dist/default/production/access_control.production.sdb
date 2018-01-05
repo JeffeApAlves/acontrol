@@ -1,0 +1,320 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F628A ]
+[d frameptr 6 ]
+"4 F:\workspace\access_control\cancela/cancela.c
+[e E646 . `uc
+CANCELA_INIT 0
+CANCELA_REQUEST_TICKET 1
+CANCELA_OPEN 2
+CANCELA_CLOSE 3
+]
+"75
+[e E609 . `uc
+MOTOR_CREATE 0
+MOTOR_INIT_OK 1
+MOTOR_DESLIGADO 2
+MOTOR_LIGADO 3
+]
+[e E615 . `uc
+SENTIDO_HORARIO 0
+SENTIDO_ANTI_HORARIO 1
+]
+"5 F:\workspace\access_control\motor/motor.c
+[e E609 . `uc
+MOTOR_CREATE 0
+MOTOR_INIT_OK 1
+MOTOR_DESLIGADO 2
+MOTOR_LIGADO 3
+]
+[e E615 . `uc
+SENTIDO_HORARIO 0
+SENTIDO_ANTI_HORARIO 1
+]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.44\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 1 0 ]
+"39
+[v _memcpyee memcpyee `(v  1 e 1 0 ]
+"17 F:\workspace\access_control\cancela/cancela.c
+[v _cancela_task cancela_task `(v  1 e 1 0 ]
+"29
+[v _handle_cancela_entrada handle_cancela_entrada `(v  1 e 1 0 ]
+"62
+[v _handle_cancela_saida handle_cancela_saida `(v  1 e 1 0 ]
+"71
+[v _cancela_entrada_open cancela_entrada_open `(v  1 e 1 0 ]
+"84
+[v _cancela_entrada_close cancela_entrada_close `(v  1 e 1 0 ]
+"123
+[v _cancela_init cancela_init `(v  1 e 1 0 ]
+"142
+[v _request_print_ticket request_print_ticket `(v  1 e 1 0 ]
+"157
+[v _veiculo_presente_entrada veiculo_presente_entrada `T(uc  1 e 1 0 ]
+"179
+[v _ticket_ok ticket_ok `T(uc  1 e 1 0 ]
+"10 F:\workspace\access_control\ihm/key.c
+[v _key_read key_read `(uc  1 e 1 0 ]
+"25
+[v _ihm_init ihm_init `(v  1 e 1 0 ]
+"16 F:\workspace\access_control\main.c
+[v _main main `(v  1 e 1 0 ]
+"12 F:\workspace\access_control\motor/motor.c
+[v _motor_task motor_task `(v  1 e 1 0 ]
+"30
+[v _motor_handle motor_handle `(v  1 e 1 0 ]
+"69
+[v _motor_start motor_start `(v  1 e 1 0 ]
+"82
+[v _motor_off motor_off `(v  1 e 1 0 ]
+"94
+[v _motor_entrada_set motor_entrada_set `(v  1 e 1 0 ]
+"108
+[v _motor_saida_set motor_saida_set `(v  1 e 1 0 ]
+"121
+[v _motor_entrada_init motor_entrada_init `(v  1 e 1 0 ]
+"139
+[v _motor_saida_init motor_saida_init `(v  1 e 1 0 ]
+"157
+[v _motor_init motor_init `(v  1 e 1 0 ]
+"15 F:\workspace\access_control\timer.c
+[v _tc_int tc_int `II(v  1 e 1 0 ]
+"54
+[v _timer0_init timer0_init `(v  1 e 1 0 ]
+"57 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic16f628a.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+[s S96 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+`uc 1 RA7 1 0 :1:7 
+]
+"181
+[u S105 . 1 `S96 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES105  1 e 1 @5 ]
+[s S142 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"243
+[u S151 . 1 `S142 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES151  1 e 1 @6 ]
+[s S35 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INTF 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INTE 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"331
+[s S44 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+[u S49 . 1 `S35 1 . 1 0 `S44 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES49  1 e 1 @11 ]
+[s S287 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 CCP1IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIF 1 0 :1:4 
+`uc 1 RCIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 EEIF 1 0 :1:7 
+]
+"403
+[u S296 . 1 `S287 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES296  1 e 1 @12 ]
+"464
+[v _T1CON T1CON `VEuc  1 e 1 @16 ]
+"835
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"905
+[v _TRISA TRISA `VEuc  1 e 1 @133 ]
+"967
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+[s S308 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 CMIE 1 0 :1:6 
+`uc 1 EEIE 1 0 :1:7 
+]
+"1046
+[u S317 . 1 `S308 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES317  1 e 1 @140 ]
+"4 F:\workspace\access_control\cancela/cancela.c
+[v _cancela_entrada cancela_entrada `E646  1 e 1 0 ]
+"5
+[v _cancela_saida cancela_saida `E646  1 e 1 0 ]
+"11
+[v _timer_close timer_close `s  1 e 2 0 ]
+"4 F:\workspace\access_control\ihm/key.c
+[v _debounce_botao debounce_botao `uc  1 e 1 0 ]
+"3 F:\workspace\access_control\motor/motor.c
+[v _timer_motor timer_motor `us  1 e 2 0 ]
+[s S190 . 5 `uc 1 voltas 1 0 `uc 1 step 1 1 `E609 1 status 1 2 `E615 1 direction 1 3 `*.27(v 1 set 1 4 ]
+"5
+[v _motor_entrada motor_entrada `S190  1 e 5 0 ]
+[v _motor_saida motor_saida `S190  1 e 5 0 ]
+"6 F:\workspace\access_control\timer.c
+[v _timer_signal timer_signal `s  1 e 2 0 ]
+"16 F:\workspace\access_control\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"44
+} 0
+"54 F:\workspace\access_control\timer.c
+[v _timer0_init timer0_init `(v  1 e 1 0 ]
+{
+"59
+} 0
+"142 F:\workspace\access_control\cancela/cancela.c
+[v _request_print_ticket request_print_ticket `(v  1 e 1 0 ]
+{
+"149
+} 0
+"12 F:\workspace\access_control\motor/motor.c
+[v _motor_task motor_task `(v  1 e 1 0 ]
+{
+"21
+} 0
+"30
+[v _motor_handle motor_handle `(v  1 e 1 0 ]
+{
+[s S190 . 5 `uc 1 voltas 1 0 `uc 1 step 1 1 `E609 1 status 1 2 `E615 1 direction 1 3 `*.27(v 1 set 1 4 ]
+[v motor_handle@motor motor `*.4S190  1 a 1 wreg ]
+"32
+[v motor_handle@step step `uc  1 a 1 8 ]
+[v motor_handle@coils coils `uc  1 a 1 7 ]
+"30
+[v motor_handle@motor motor `*.4S190  1 a 1 wreg ]
+"34
+"30
+[v motor_handle@motor motor `*.4S190  1 a 1 9 ]
+"60
+} 0
+"157
+[v _motor_init motor_init `(v  1 e 1 0 ]
+{
+"162
+} 0
+"139
+[v _motor_saida_init motor_saida_init `(v  1 e 1 0 ]
+{
+"150
+} 0
+"94
+[v _motor_entrada_set motor_entrada_set `(v  1 e 1 0 ]
+{
+[v motor_entrada_set@val val `uc  1 p 1 4 ]
+"100
+} 0
+"108
+[v _motor_saida_set motor_saida_set `(v  1 e 1 0 ]
+{
+[v motor_saida_set@val val `uc  1 p 1 4 ]
+"114
+} 0
+"121
+[v _motor_entrada_init motor_entrada_init `(v  1 e 1 0 ]
+{
+"132
+} 0
+"82
+[v _motor_off motor_off `(v  1 e 1 0 ]
+{
+[s S190 . 5 `uc 1 voltas 1 0 `uc 1 step 1 1 `E609 1 status 1 2 `E615 1 direction 1 3 `*.27(v 1 set 1 4 ]
+[v motor_off@motor motor `*.4S190  1 a 1 wreg ]
+[v motor_off@motor motor `*.4S190  1 a 1 wreg ]
+"84
+"82
+[v motor_off@motor motor `*.4S190  1 a 1 5 ]
+"86
+} 0
+"10 F:\workspace\access_control\ihm/key.c
+[v _key_read key_read `(uc  1 e 1 0 ]
+{
+"18
+} 0
+"25
+[v _ihm_init ihm_init `(v  1 e 1 0 ]
+{
+"30
+} 0
+"17 F:\workspace\access_control\cancela/cancela.c
+[v _cancela_task cancela_task `(v  1 e 1 0 ]
+{
+"22
+} 0
+"62
+[v _handle_cancela_saida handle_cancela_saida `(v  1 e 1 0 ]
+{
+"63
+} 0
+"29
+[v _handle_cancela_entrada handle_cancela_entrada `(v  1 e 1 0 ]
+{
+"55
+} 0
+"157
+[v _veiculo_presente_entrada veiculo_presente_entrada `T(uc  1 e 1 0 ]
+{
+"160
+} 0
+"179
+[v _ticket_ok ticket_ok `T(uc  1 e 1 0 ]
+{
+"182
+} 0
+"71
+[v _cancela_entrada_open cancela_entrada_open `(v  1 e 1 0 ]
+{
+"76
+} 0
+"84
+[v _cancela_entrada_close cancela_entrada_close `(v  1 e 1 0 ]
+{
+"89
+} 0
+"69 F:\workspace\access_control\motor/motor.c
+[v _motor_start motor_start `(v  1 e 1 0 ]
+{
+[s S190 . 5 `uc 1 voltas 1 0 `uc 1 step 1 1 `E609 1 status 1 2 `E615 1 direction 1 3 `*.27(v 1 set 1 4 ]
+[v motor_start@motor motor `*.4S190  1 a 1 wreg ]
+[v motor_start@motor motor `*.4S190  1 a 1 wreg ]
+[v motor_start@direction direction `E615  1 p 1 4 ]
+[v motor_start@voltas voltas `uc  1 p 1 5 ]
+"71
+"69
+[v motor_start@motor motor `*.4S190  1 a 1 0 ]
+"74
+} 0
+"123 F:\workspace\access_control\cancela/cancela.c
+[v _cancela_init cancela_init `(v  1 e 1 0 ]
+{
+"135
+} 0
+"15 F:\workspace\access_control\timer.c
+[v _tc_int tc_int `II(v  1 e 1 0 ]
+{
+"33
+} 0

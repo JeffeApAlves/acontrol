@@ -1,0 +1,2700 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.44 build -154322312 
+                                                                                               Tue Oct 03 09:45:28 2017
+
+Microchip Technology Omniscient Code Generator v1.44 (Free mode) build 201709140600
+     1                           	processor	16F628A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataCOMMON,global,class=CODE,delta=2
+     5                           	psect	idataBANK0,global,class=CODE,delta=2
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	dataCOMMON,global,class=COMMON,space=1,delta=1
+     9                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+    10                           	psect	dataBANK0,global,class=BANK0,space=1,delta=1
+    11                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    12                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    13                           	psect	maintext,global,class=CODE,split=1,delta=2
+    14                           	psect	text1,local,class=CODE,merge=1,delta=2
+    15                           	psect	text2,local,class=CODE,merge=1,delta=2
+    16                           	psect	text3,local,class=CODE,merge=1,delta=2
+    17                           	psect	text4,local,class=CODE,merge=1,delta=2
+    18                           	psect	text5,local,class=CODE,merge=1,delta=2
+    19                           	psect	text6,local,class=CODE,merge=1,delta=2
+    20                           	psect	text7,local,class=CODE,merge=1,delta=2
+    21                           	psect	text8,local,class=CODE,merge=1,delta=2
+    22                           	psect	text9,local,class=CODE,merge=1,delta=2
+    23                           	psect	text10,local,class=CODE,merge=1,delta=2
+    24                           	psect	text11,local,class=CODE,merge=1,delta=2
+    25                           	psect	text12,local,class=CODE,merge=1,delta=2
+    26                           	psect	text13,local,class=CODE,merge=1,delta=2
+    27                           	psect	text14,local,class=CODE,merge=1,delta=2
+    28                           	psect	text15,local,class=CODE,merge=1,delta=2
+    29                           	psect	text16,local,class=CODE,merge=1,inline,delta=2
+    30                           	psect	text17,local,class=CODE,merge=1,inline,delta=2
+    31                           	psect	text18,local,class=CODE,merge=1,delta=2
+    32                           	psect	text19,local,class=CODE,merge=1,delta=2
+    33                           	psect	text20,local,class=CODE,merge=1,delta=2
+    34                           	psect	text21,local,class=CODE,merge=1,delta=2
+    35                           	psect	text22,local,class=CODE,merge=1,delta=2
+    36                           	psect	intentry,global,class=CODE,delta=2
+    37                           	psect	functab,global,class=ENTRY,delta=2
+    38                           	dabs	1,0x7E,2
+    39  0000                     
+    40                           ; Version 1.44
+    41                           ; Generated 14/09/2017 GMT
+    42                           ; 
+    43                           ; Copyright © 2017, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    44                           ; All rights reserved.
+    45                           ; 
+    46                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
+      +                          ip").
+    47                           ; 
+    48                           ; Redistribution and use in source and binary forms, with or without modification, are
+    49                           ; permitted provided that the following conditions are met:
+    50                           ; 
+    51                           ;     1. Redistributions of source code must retain the above copyright notice, this lis
+      +                          t of
+    52                           ;        conditions and the following disclaimer.
+    53                           ; 
+    54                           ;     2. Redistributions in binary form must reproduce the above copyright notice, this 
+      +                          list
+    55                           ;        of conditions and the following disclaimer in the documentation and/or other
+    56                           ;        materials provided with the distribution.
+    57                           ; 
+    58                           ;     3. Microchip's name may not be used to endorse or promote products derived from th
+      +                          is
+    59                           ;        software without specific prior written permission.
+    60                           ; 
+    61                           ; THIS SOFTWARE IS PROVIDED BY MICROCHIP "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+    62                           ; INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS F
+      +                          OR
+    63                           ; PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL MICROCHIP BE LIABLE FOR ANY DIRECT, INDIREC
+      +                          T,
+    64                           ; INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING BUT NOT LIMITED TO
+    65                           ; PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA OR PROFITS; OR BUSINESS
+    66                           ; INTERRUPTION) HOWSOEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, ST
+      +                          RICT
+    67                           ; LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE U
+      +                          SE OF
+    68                           ; THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    69                           ; 
+    70                           ; 
+    71                           ; Code-generator required, PIC16F628A Definitions
+    72                           ; 
+    73                           ; SFR Addresses
+    74  0000                     	;# 
+    75  0001                     	;# 
+    76  0002                     	;# 
+    77  0003                     	;# 
+    78  0004                     	;# 
+    79  0005                     	;# 
+    80  0006                     	;# 
+    81  000A                     	;# 
+    82  000B                     	;# 
+    83  000C                     	;# 
+    84  000E                     	;# 
+    85  000E                     	;# 
+    86  000F                     	;# 
+    87  0010                     	;# 
+    88  0011                     	;# 
+    89  0012                     	;# 
+    90  0015                     	;# 
+    91  0015                     	;# 
+    92  0016                     	;# 
+    93  0017                     	;# 
+    94  0018                     	;# 
+    95  0019                     	;# 
+    96  001A                     	;# 
+    97  001F                     	;# 
+    98  0081                     	;# 
+    99  0085                     	;# 
+   100  0086                     	;# 
+   101  008C                     	;# 
+   102  008E                     	;# 
+   103  0092                     	;# 
+   104  0098                     	;# 
+   105  0099                     	;# 
+   106  009A                     	;# 
+   107  009B                     	;# 
+   108  009C                     	;# 
+   109  009D                     	;# 
+   110  009F                     	;# 
+   111  0000                     	;# 
+   112  0001                     	;# 
+   113  0002                     	;# 
+   114  0003                     	;# 
+   115  0004                     	;# 
+   116  0005                     	;# 
+   117  0006                     	;# 
+   118  000A                     	;# 
+   119  000B                     	;# 
+   120  000C                     	;# 
+   121  000E                     	;# 
+   122  000E                     	;# 
+   123  000F                     	;# 
+   124  0010                     	;# 
+   125  0011                     	;# 
+   126  0012                     	;# 
+   127  0015                     	;# 
+   128  0015                     	;# 
+   129  0016                     	;# 
+   130  0017                     	;# 
+   131  0018                     	;# 
+   132  0019                     	;# 
+   133  001A                     	;# 
+   134  001F                     	;# 
+   135  0081                     	;# 
+   136  0085                     	;# 
+   137  0086                     	;# 
+   138  008C                     	;# 
+   139  008E                     	;# 
+   140  0092                     	;# 
+   141  0098                     	;# 
+   142  0099                     	;# 
+   143  009A                     	;# 
+   144  009B                     	;# 
+   145  009C                     	;# 
+   146  009D                     	;# 
+   147  009F                     	;# 
+   148  0000                     	;# 
+   149  0001                     	;# 
+   150  0002                     	;# 
+   151  0003                     	;# 
+   152  0004                     	;# 
+   153  0005                     	;# 
+   154  0006                     	;# 
+   155  000A                     	;# 
+   156  000B                     	;# 
+   157  000C                     	;# 
+   158  000E                     	;# 
+   159  000E                     	;# 
+   160  000F                     	;# 
+   161  0010                     	;# 
+   162  0011                     	;# 
+   163  0012                     	;# 
+   164  0015                     	;# 
+   165  0015                     	;# 
+   166  0016                     	;# 
+   167  0017                     	;# 
+   168  0018                     	;# 
+   169  0019                     	;# 
+   170  001A                     	;# 
+   171  001F                     	;# 
+   172  0081                     	;# 
+   173  0085                     	;# 
+   174  0086                     	;# 
+   175  008C                     	;# 
+   176  008E                     	;# 
+   177  0092                     	;# 
+   178  0098                     	;# 
+   179  0099                     	;# 
+   180  009A                     	;# 
+   181  009B                     	;# 
+   182  009C                     	;# 
+   183  009D                     	;# 
+   184  009F                     	;# 
+   185  0000                     	;# 
+   186  0001                     	;# 
+   187  0002                     	;# 
+   188  0003                     	;# 
+   189  0004                     	;# 
+   190  0005                     	;# 
+   191  0006                     	;# 
+   192  000A                     	;# 
+   193  000B                     	;# 
+   194  000C                     	;# 
+   195  000E                     	;# 
+   196  000E                     	;# 
+   197  000F                     	;# 
+   198  0010                     	;# 
+   199  0011                     	;# 
+   200  0012                     	;# 
+   201  0015                     	;# 
+   202  0015                     	;# 
+   203  0016                     	;# 
+   204  0017                     	;# 
+   205  0018                     	;# 
+   206  0019                     	;# 
+   207  001A                     	;# 
+   208  001F                     	;# 
+   209  0081                     	;# 
+   210  0085                     	;# 
+   211  0086                     	;# 
+   212  008C                     	;# 
+   213  008E                     	;# 
+   214  0092                     	;# 
+   215  0098                     	;# 
+   216  0099                     	;# 
+   217  009A                     	;# 
+   218  009B                     	;# 
+   219  009C                     	;# 
+   220  009D                     	;# 
+   221  009F                     	;# 
+   222  0000                     	;# 
+   223  0001                     	;# 
+   224  0002                     	;# 
+   225  0003                     	;# 
+   226  0004                     	;# 
+   227  0005                     	;# 
+   228  0006                     	;# 
+   229  000A                     	;# 
+   230  000B                     	;# 
+   231  000C                     	;# 
+   232  000E                     	;# 
+   233  000E                     	;# 
+   234  000F                     	;# 
+   235  0010                     	;# 
+   236  0011                     	;# 
+   237  0012                     	;# 
+   238  0015                     	;# 
+   239  0015                     	;# 
+   240  0016                     	;# 
+   241  0017                     	;# 
+   242  0018                     	;# 
+   243  0019                     	;# 
+   244  001A                     	;# 
+   245  001F                     	;# 
+   246  0081                     	;# 
+   247  0085                     	;# 
+   248  0086                     	;# 
+   249  008C                     	;# 
+   250  008E                     	;# 
+   251  0092                     	;# 
+   252  0098                     	;# 
+   253  0099                     	;# 
+   254  009A                     	;# 
+   255  009B                     	;# 
+   256  009C                     	;# 
+   257  009D                     	;# 
+   258  009F                     	;# 
+   259  0000                     	;# 
+   260  0001                     	;# 
+   261  0002                     	;# 
+   262  0003                     	;# 
+   263  0004                     	;# 
+   264  0005                     	;# 
+   265  0006                     	;# 
+   266  000A                     	;# 
+   267  000B                     	;# 
+   268  000C                     	;# 
+   269  000E                     	;# 
+   270  000E                     	;# 
+   271  000F                     	;# 
+   272  0010                     	;# 
+   273  0011                     	;# 
+   274  0012                     	;# 
+   275  0015                     	;# 
+   276  0015                     	;# 
+   277  0016                     	;# 
+   278  0017                     	;# 
+   279  0018                     	;# 
+   280  0019                     	;# 
+   281  001A                     	;# 
+   282  001F                     	;# 
+   283  0081                     	;# 
+   284  0085                     	;# 
+   285  0086                     	;# 
+   286  008C                     	;# 
+   287  008E                     	;# 
+   288  0092                     	;# 
+   289  0098                     	;# 
+   290  0099                     	;# 
+   291  009A                     	;# 
+   292  009B                     	;# 
+   293  009C                     	;# 
+   294  009D                     	;# 
+   295  009F                     	;# 
+   296                           
+   297                           	psect	idataCOMMON
+   298  0238                     __pidataCOMMON:	
+   299                           
+   300                           ;initializer for _debounce_botao
+   301  0238  3432               	retlw	50
+   302                           
+   303                           	psect	idataBANK0
+   304  022F                     __pidataBANK0:	
+   305                           
+   306                           ;initializer for _timer_motor
+   307  022F  3414               	retlw	20
+   308  0230  3400               	retlw	0
+   309                           
+   310                           ;initializer for _timer_close
+   311  0231  3488               	retlw	136
+   312  0232  3413               	retlw	19
+   313                           
+   314                           ;initializer for _timer_signal
+   315  0233  34E8               	retlw	232
+   316  0234  3403               	retlw	3
+   317  0001                     _TMR0	set	1
+   318  0010                     _T1CON	set	16
+   319  000C                     _PIR1bits	set	12
+   320  0006                     _PORTBbits	set	6
+   321  0005                     _PORTAbits	set	5
+   322  000B                     _INTCONbits	set	11
+   323  0081                     _OPTION_REG	set	129
+   324  008C                     _PIE1bits	set	140
+   325  0086                     _TRISB	set	134
+   326  0085                     _TRISA	set	133
+   327                           
+   328                           ; #config settings
+   329  0000                     
+   330                           	psect	cinit
+   331  0011                     start_initialization:	
+   332  0011                     __initialization:	
+   333                           
+   334                           ; Initialize objects allocated to BANK0
+   335  0011  222F               	fcall	__pidataBANK0	;fetch initializer
+   336  0012  00B4               	movwf	__pdataBANK0& (0+127)
+   337  0013  2230               	fcall	__pidataBANK0+1	;fetch initializer
+   338  0014  00B5               	movwf	(__pdataBANK0+1)& (0+127)
+   339  0015  2231               	fcall	__pidataBANK0+2	;fetch initializer
+   340  0016  00B6               	movwf	(__pdataBANK0+2)& (0+127)
+   341  0017  2232               	fcall	__pidataBANK0+3	;fetch initializer
+   342  0018  00B7               	movwf	(__pdataBANK0+3)& (0+127)
+   343  0019  2233               	fcall	__pidataBANK0+4	;fetch initializer
+   344  001A  00B8               	movwf	(__pdataBANK0+4)& (0+127)
+   345  001B  2234               	fcall	__pidataBANK0+5	;fetch initializer
+   346  001C  00B9               	movwf	(__pdataBANK0+5)& (0+127)
+   347                           
+   348                           ; Initialize objects allocated to COMMON
+   349  001D  2238               	fcall	__pidataCOMMON	;fetch initializer
+   350  001E  00F9               	movwf	__pdataCOMMON& (0+127)
+   351                           
+   352                           ; Clear objects allocated to BANK0
+   353  001F  01A0               	clrf	__pbssBANK0& (0+127)
+   354  0020  01A1               	clrf	(__pbssBANK0+1)& (0+127)
+   355  0021  01A2               	clrf	(__pbssBANK0+2)& (0+127)
+   356  0022  01A3               	clrf	(__pbssBANK0+3)& (0+127)
+   357  0023  01A4               	clrf	(__pbssBANK0+4)& (0+127)
+   358  0024  01A5               	clrf	(__pbssBANK0+5)& (0+127)
+   359  0025  01A6               	clrf	(__pbssBANK0+6)& (0+127)
+   360  0026  01A7               	clrf	(__pbssBANK0+7)& (0+127)
+   361  0027  01A8               	clrf	(__pbssBANK0+8)& (0+127)
+   362  0028  01A9               	clrf	(__pbssBANK0+9)& (0+127)
+   363                           
+   364                           ; Clear objects allocated to COMMON
+   365  0029  01F7               	clrf	__pbssCOMMON& (0+127)
+   366  002A  01F8               	clrf	(__pbssCOMMON+1)& (0+127)
+   367  002B                     end_of_initialization:	
+   368                           ;End of C runtime variable initialization code
+   369                           
+   370  002B                     __end_of__initialization:	
+   371  002B  0183               	clrf	3
+   372  002C  29D1               	ljmp	_main	;jump to C main() function
+   373                           
+   374                           	psect	bssCOMMON
+   375  0077                     __pbssCOMMON:	
+   376  0077                     _cancela_saida:	
+   377  0077                     	ds	1
+   378  0078                     _cancela_entrada:	
+   379  0078                     	ds	1
+   380                           
+   381                           	psect	dataCOMMON
+   382  0079                     __pdataCOMMON:	
+   383  0079                     _debounce_botao:	
+   384  0079                     	ds	1
+   385                           
+   386                           	psect	bssBANK0
+   387  0020                     __pbssBANK0:	
+   388  0020                     _motor_saida:	
+   389  0020                     	ds	5
+   390  0025                     _motor_entrada:	
+   391  0025                     	ds	5
+   392                           
+   393                           	psect	dataBANK0
+   394  0034                     __pdataBANK0:	
+   395  0034                     _timer_motor:	
+   396  0034                     	ds	2
+   397  0036                     _timer_close:	
+   398  0036                     	ds	2
+   399  0038                     _timer_signal:	
+   400  0038                     	ds	2
+   401                           
+   402                           	psect	cstackCOMMON
+   403  0070                     __pcstackCOMMON:	
+   404  0070                     ?_motor_init:	
+   405  0070                     ?_ihm_init:	
+   406                           ; 1 bytes @ 0x0
+   407                           
+   408  0070                     ?_cancela_init:	
+   409                           ; 1 bytes @ 0x0
+   410                           
+   411  0070                     ?_timer0_init:	
+   412                           ; 1 bytes @ 0x0
+   413                           
+   414  0070                     ?_motor_task:	
+   415                           ; 1 bytes @ 0x0
+   416                           
+   417  0070                     ?_cancela_task:	
+   418                           ; 1 bytes @ 0x0
+   419                           
+   420  0070                     ?_key_read:	
+   421                           ; 1 bytes @ 0x0
+   422                           
+   423  0070                     ?_request_print_ticket:	
+   424                           ; 1 bytes @ 0x0
+   425                           
+   426  0070                     ?_handle_cancela_entrada:	
+   427                           ; 1 bytes @ 0x0
+   428                           
+   429  0070                     ?_handle_cancela_saida:	
+   430                           ; 1 bytes @ 0x0
+   431                           
+   432  0070                     ?_veiculo_presente_entrada:	
+   433                           ; 1 bytes @ 0x0
+   434                           
+   435  0070                     ?_ticket_ok:	
+   436                           ; 1 bytes @ 0x0
+   437                           
+   438  0070                     ?_cancela_entrada_open:	
+   439                           ; 1 bytes @ 0x0
+   440                           
+   441  0070                     ?_cancela_entrada_close:	
+   442                           ; 1 bytes @ 0x0
+   443                           
+   444  0070                     ?_main:	
+   445                           ; 1 bytes @ 0x0
+   446                           
+   447  0070                     ?_tc_int:	
+   448                           ; 1 bytes @ 0x0
+   449                           
+   450  0070                     ??_tc_int:	
+   451                           ; 1 bytes @ 0x0
+   452                           
+   453  0070                     ?_motor_entrada_init:	
+   454                           ; 1 bytes @ 0x0
+   455                           
+   456  0070                     ?_motor_saida_init:	
+   457                           ; 1 bytes @ 0x0
+   458                           
+   459                           
+   460                           ; 1 bytes @ 0x0
+   461  0070                     	ds	4
+   462  0074                     ??_ihm_init:	
+   463  0074                     ??_cancela_init:	
+   464                           ; 1 bytes @ 0x4
+   465                           
+   466  0074                     ??_timer0_init:	
+   467                           ; 1 bytes @ 0x4
+   468                           
+   469  0074                     ??_key_read:	
+   470                           ; 1 bytes @ 0x4
+   471                           
+   472  0074                     ??_request_print_ticket:	
+   473                           ; 1 bytes @ 0x4
+   474                           
+   475  0074                     ??_handle_cancela_saida:	
+   476                           ; 1 bytes @ 0x4
+   477                           
+   478  0074                     ??_veiculo_presente_entrada:	
+   479                           ; 1 bytes @ 0x4
+   480                           
+   481  0074                     ??_ticket_ok:	
+   482                           ; 1 bytes @ 0x4
+   483                           
+   484  0074                     ?_motor_start:	
+   485                           ; 1 bytes @ 0x4
+   486                           
+   487  0074                     ?_motor_off:	
+   488                           ; 1 bytes @ 0x4
+   489                           
+   490  0074                     ??_motor_off:	
+   491                           ; 1 bytes @ 0x4
+   492                           
+   493  0074                     ?_motor_entrada_set:	
+   494                           ; 1 bytes @ 0x4
+   495                           
+   496  0074                     ?_motor_saida_set:	
+   497                           ; 1 bytes @ 0x4
+   498                           
+   499  0074                     motor_start@direction:	
+   500                           ; 1 bytes @ 0x4
+   501                           
+   502  0074                     motor_entrada_set@val:	
+   503                           ; 1 bytes @ 0x4
+   504                           
+   505  0074                     motor_saida_set@val:	
+   506                           ; 1 bytes @ 0x4
+   507                           
+   508                           
+   509                           ; 1 bytes @ 0x4
+   510  0074                     	ds	1
+   511  0075                     ??_motor_entrada_set:	
+   512  0075                     ??_motor_saida_set:	
+   513                           ; 1 bytes @ 0x5
+   514                           
+   515  0075                     motor_start@voltas:	
+   516                           ; 1 bytes @ 0x5
+   517                           
+   518  0075                     motor_off@motor:	
+   519                           ; 1 bytes @ 0x5
+   520                           
+   521                           
+   522                           ; 1 bytes @ 0x5
+   523  0075                     	ds	1
+   524  0076                     ??_motor_task:	
+   525  0076                     ??_motor_start:	
+   526                           ; 1 bytes @ 0x6
+   527                           
+   528  0076                     ?_motor_handle:	
+   529                           ; 1 bytes @ 0x6
+   530                           
+   531  0076                     ??_motor_entrada_init:	
+   532                           ; 1 bytes @ 0x6
+   533                           
+   534  0076                     ??_motor_saida_init:	
+   535                           ; 1 bytes @ 0x6
+   536                           
+   537                           
+   538                           ; 1 bytes @ 0x6
+   539  0076                     	ds	1
+   540  0077                     ??_motor_init:	
+   541  0077                     ??_cancela_task:	
+   542                           ; 1 bytes @ 0x7
+   543                           
+   544  0077                     ??_handle_cancela_entrada:	
+   545                           ; 1 bytes @ 0x7
+   546                           
+   547  0077                     ??_main:	
+   548                           ; 1 bytes @ 0x7
+   549                           
+   550                           
+   551                           	psect	cstackBANK0
+   552  002A                     __pcstackBANK0:	
+   553                           ; 1 bytes @ 0x7
+   554                           
+   555  002A                     ??_motor_handle:	
+   556  002A                     motor_start@motor:	
+   557                           ; 1 bytes @ 0x0
+   558                           
+   559                           
+   560                           ; 1 bytes @ 0x0
+   561  002A                     	ds	1
+   562  002B                     ??_cancela_entrada_open:	
+   563  002B                     ??_cancela_entrada_close:	
+   564                           ; 1 bytes @ 0x1
+   565                           
+   566                           
+   567                           ; 1 bytes @ 0x1
+   568  002B                     	ds	2
+   569  002D                     _motor_handle$420:	
+   570                           
+   571                           ; 2 bytes @ 0x3
+   572  002D                     	ds	2
+   573  002F                     _motor_handle$421:	
+   574                           
+   575                           ; 2 bytes @ 0x5
+   576  002F                     	ds	2
+   577  0031                     motor_handle@coils:	
+   578                           
+   579                           ; 1 bytes @ 0x7
+   580  0031                     	ds	1
+   581  0032                     motor_handle@step:	
+   582                           
+   583                           ; 1 bytes @ 0x8
+   584  0032                     	ds	1
+   585  0033                     motor_handle@motor:	
+   586                           
+   587                           ; 1 bytes @ 0x9
+   588  0033                     	ds	1
+   589                           
+   590                           	psect	maintext
+   591  01D1                     __pmaintext:	
+   592 ;;
+   593 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   594 ;;
+   595 ;; *************** function _main *****************
+   596 ;; Defined at:
+   597 ;;		line 16 in file "main.c"
+   598 ;; Parameters:    Size  Location     Type
+   599 ;;		None
+   600 ;; Auto vars:     Size  Location     Type
+   601 ;;		None
+   602 ;; Return value:  Size  Location     Type
+   603 ;;                  1    wreg      void 
+   604 ;; Registers used:
+   605 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   606 ;; Tracked objects:
+   607 ;;		On entry : B00/0
+   608 ;;		On exit  : 0/0
+   609 ;;		Unchanged: 0/0
+   610 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   611 ;;      Params:         0       0       0       0
+   612 ;;      Locals:         0       0       0       0
+   613 ;;      Temps:          0       0       0       0
+   614 ;;      Totals:         0       0       0       0
+   615 ;;Total ram usage:        0 bytes
+   616 ;; Hardware stack levels required when called:    5
+   617 ;; This function calls:
+   618 ;;		_cancela_init
+   619 ;;		_cancela_task
+   620 ;;		_ihm_init
+   621 ;;		_key_read
+   622 ;;		_motor_init
+   623 ;;		_motor_task
+   624 ;;		_request_print_ticket
+   625 ;;		_timer0_init
+   626 ;; This function is called by:
+   627 ;;		Startup code after reset
+   628 ;; This function uses a non-reentrant model
+   629 ;;
+   630                           
+   631                           
+   632                           ;psect for function _main
+   633  01D1                     _main:	
+   634                           
+   635                           ;main.c: 18: motor_init();
+   636                           
+   637                           ;incstack = 0
+   638                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   639  01D1  220E               	fcall	_motor_init
+   640                           
+   641                           ;main.c: 20: ihm_init();
+   642  01D2  2220               	fcall	_ihm_init
+   643                           
+   644                           ;main.c: 22: cancela_init();
+   645  01D3  21A3               	fcall	_cancela_init
+   646                           
+   647                           ;main.c: 24: timer0_init();
+   648  01D4  21FA               	fcall	_timer0_init
+   649                           
+   650                           ;main.c: 26: INTCONbits.GIE = 1;
+   651  01D5  178B               	bsf	11,7	;volatile
+   652  01D6                     l23:	
+   653                           ;main.c: 28: while(1){
+   654                           
+   655  01D6  0064               	clrwdt	;# 
+   656                           
+   657                           ;main.c: 33: motor_task();
+   658  01D7  2192               	fcall	_motor_task
+   659                           
+   660                           ;main.c: 35: cancela_task();
+   661  01D8  2235               	fcall	_cancela_task
+   662                           
+   663                           ;main.c: 37: if(key_read()){
+   664  01D9  21B3               	fcall	_key_read
+   665  01DA  3A00               	xorlw	0
+   666  01DB  1903               	skipnz
+   667  01DC  29D6               	goto	l23
+   668                           
+   669                           ;main.c: 39: request_print_ticket();
+   670  01DD  2204               	fcall	_request_print_ticket
+   671  01DE  29D6               	goto	l23
+   672  01DF                     __end_of_main:	
+   673                           ;main.c: 40: }
+   674                           ;main.c: 41: }
+   675                           ;main.c: 43: return;
+   676                           
+   677                           
+   678                           	psect	text1
+   679  01FA                     __ptext1:	
+   680 ;; *************** function _timer0_init *****************
+   681 ;; Defined at:
+   682 ;;		line 54 in file "timer.c"
+   683 ;; Parameters:    Size  Location     Type
+   684 ;;		None
+   685 ;; Auto vars:     Size  Location     Type
+   686 ;;		None
+   687 ;; Return value:  Size  Location     Type
+   688 ;;                  1    wreg      void 
+   689 ;; Registers used:
+   690 ;;		wreg
+   691 ;; Tracked objects:
+   692 ;;		On entry : 0/0
+   693 ;;		On exit  : 0/0
+   694 ;;		Unchanged: 0/0
+   695 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   696 ;;      Params:         0       0       0       0
+   697 ;;      Locals:         0       0       0       0
+   698 ;;      Temps:          0       0       0       0
+   699 ;;      Totals:         0       0       0       0
+   700 ;;Total ram usage:        0 bytes
+   701 ;; Hardware stack levels used:    1
+   702 ;; Hardware stack levels required when called:    1
+   703 ;; This function calls:
+   704 ;;		Nothing
+   705 ;; This function is called by:
+   706 ;;		_main
+   707 ;; This function uses a non-reentrant model
+   708 ;;
+   709                           
+   710                           
+   711                           ;psect for function _timer0_init
+   712  01FA                     _timer0_init:	
+   713                           
+   714                           ;timer.c: 56: OPTION_REG = 0x81;
+   715                           
+   716                           ;incstack = 0
+   717                           ; Regs used in _timer0_init: [wreg]
+   718  01FA  3081               	movlw	129
+   719  01FB  1683               	bsf	3,5	;RP0=1, select bank1
+   720  01FC  1303               	bcf	3,6	;RP1=0, select bank1
+   721  01FD  0081               	movwf	1	;volatile
+   722                           
+   723                           ;timer.c: 57: TMR0 = 6;
+   724  01FE  3006               	movlw	6
+   725  01FF  1283               	bcf	3,5	;RP0=0, select bank0
+   726  0200  1303               	bcf	3,6	;RP1=0, select bank0
+   727  0201  0081               	movwf	1	;volatile
+   728                           
+   729                           ;timer.c: 58: INTCONbits.T0IE = 1;
+   730  0202  168B               	bsf	11,5	;volatile
+   731  0203  0008               	return
+   732  0204                     __end_of_timer0_init:	
+   733                           
+   734                           	psect	text2
+   735  0204                     __ptext2:	
+   736 ;; *************** function _request_print_ticket *****************
+   737 ;; Defined at:
+   738 ;;		line 142 in file "cancela/cancela.c"
+   739 ;; Parameters:    Size  Location     Type
+   740 ;;		None
+   741 ;; Auto vars:     Size  Location     Type
+   742 ;;		None
+   743 ;; Return value:  Size  Location     Type
+   744 ;;                  1    wreg      void 
+   745 ;; Registers used:
+   746 ;;		wreg
+   747 ;; Tracked objects:
+   748 ;;		On entry : 0/0
+   749 ;;		On exit  : 0/0
+   750 ;;		Unchanged: 0/0
+   751 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   752 ;;      Params:         0       0       0       0
+   753 ;;      Locals:         0       0       0       0
+   754 ;;      Temps:          0       0       0       0
+   755 ;;      Totals:         0       0       0       0
+   756 ;;Total ram usage:        0 bytes
+   757 ;; Hardware stack levels used:    1
+   758 ;; Hardware stack levels required when called:    1
+   759 ;; This function calls:
+   760 ;;		Nothing
+   761 ;; This function is called by:
+   762 ;;		_main
+   763 ;; This function uses a non-reentrant model
+   764 ;;
+   765                           
+   766                           
+   767                           ;psect for function _request_print_ticket
+   768  0204                     _request_print_ticket:	
+   769                           
+   770                           ;cancela.c: 144: PORTBbits.RB0 = 1;
+   771                           
+   772                           ;incstack = 0
+   773                           ; Regs used in _request_print_ticket: [wreg]
+   774  0204  1283               	bcf	3,5	;RP0=0, select bank0
+   775  0205  1303               	bcf	3,6	;RP1=0, select bank0
+   776  0206  1406               	bsf	6,0	;volatile
+   777                           
+   778                           ;cancela.c: 146: timer_signal = 1000;
+   779  0207  30E8               	movlw	232
+   780  0208  00B8               	movwf	_timer_signal
+   781  0209  3003               	movlw	3
+   782  020A  00B9               	movwf	_timer_signal+1
+   783                           
+   784                           ;cancela.c: 148: cancela_entrada = CANCELA_REQUEST_TICKET;
+   785  020B  01F8               	clrf	_cancela_entrada
+   786  020C  0AF8               	incf	_cancela_entrada,f
+   787  020D  0008               	return
+   788  020E                     __end_of_request_print_ticket:	
+   789                           
+   790                           	psect	text3
+   791  0192                     __ptext3:	
+   792 ;; *************** function _motor_task *****************
+   793 ;; Defined at:
+   794 ;;		line 12 in file "motor/motor.c"
+   795 ;; Parameters:    Size  Location     Type
+   796 ;;		None
+   797 ;; Auto vars:     Size  Location     Type
+   798 ;;		None
+   799 ;; Return value:  Size  Location     Type
+   800 ;;                  1    wreg      void 
+   801 ;; Registers used:
+   802 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   803 ;; Tracked objects:
+   804 ;;		On entry : 0/0
+   805 ;;		On exit  : 0/0
+   806 ;;		Unchanged: 0/0
+   807 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   808 ;;      Params:         0       0       0       0
+   809 ;;      Locals:         0       0       0       0
+   810 ;;      Temps:          0       0       0       0
+   811 ;;      Totals:         0       0       0       0
+   812 ;;Total ram usage:        0 bytes
+   813 ;; Hardware stack levels used:    1
+   814 ;; Hardware stack levels required when called:    3
+   815 ;; This function calls:
+   816 ;;		_motor_handle
+   817 ;; This function is called by:
+   818 ;;		_main
+   819 ;; This function uses a non-reentrant model
+   820 ;;
+   821                           
+   822                           
+   823                           ;psect for function _motor_task
+   824  0192                     _motor_task:	
+   825                           
+   826                           ;motor.c: 14: if(timer_motor){
+   827                           
+   828                           ;incstack = 0
+   829                           ; Regs used in _motor_task: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   830  0192  1283               	bcf	3,5	;RP0=0, select bank0
+   831  0193  1303               	bcf	3,6	;RP1=0, select bank0
+   832  0194  0834               	movf	_timer_motor,w
+   833  0195  0435               	iorwf	_timer_motor+1,w
+   834  0196  1903               	btfsc	3,2
+   835  0197  0008               	return
+   836                           
+   837                           ;motor.c: 16: motor_handle(&motor_entrada);
+   838  0198  3025               	movlw	(low (_motor_entrada| 0))& (0+255)
+   839  0199  2035               	fcall	_motor_handle
+   840                           
+   841                           ;motor.c: 17: motor_handle(&motor_saida);
+   842  019A  3020               	movlw	(low (_motor_saida| 0))& (0+255)
+   843  019B  2035               	fcall	_motor_handle
+   844                           
+   845                           ;motor.c: 19: timer_motor=20;
+   846  019C  3014               	movlw	20
+   847  019D  1283               	bcf	3,5	;RP0=0, select bank0
+   848  019E  1303               	bcf	3,6	;RP1=0, select bank0
+   849  019F  00B4               	movwf	_timer_motor
+   850  01A0  3000               	movlw	0
+   851  01A1  00B5               	movwf	_timer_motor+1
+   852  01A2  0008               	return
+   853  01A3                     __end_of_motor_task:	
+   854                           
+   855                           	psect	text4
+   856  0035                     __ptext4:	
+   857 ;; *************** function _motor_handle *****************
+   858 ;; Defined at:
+   859 ;;		line 30 in file "motor/motor.c"
+   860 ;; Parameters:    Size  Location     Type
+   861 ;;  motor           1    wreg     PTR struct .
+   862 ;;		 -> motor_saida(5), motor_entrada(5), 
+   863 ;; Auto vars:     Size  Location     Type
+   864 ;;  motor           1    9[BANK0 ] PTR struct .
+   865 ;;		 -> motor_saida(5), motor_entrada(5), 
+   866 ;;  step            1    8[BANK0 ] unsigned char 
+   867 ;;  coils           1    7[BANK0 ] unsigned char 
+   868 ;; Return value:  Size  Location     Type
+   869 ;;                  1    wreg      void 
+   870 ;; Registers used:
+   871 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   872 ;; Tracked objects:
+   873 ;;		On entry : 0/0
+   874 ;;		On exit  : 0/0
+   875 ;;		Unchanged: 0/0
+   876 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   877 ;;      Params:         0       0       0       0
+   878 ;;      Locals:         0       7       0       0
+   879 ;;      Temps:          0       3       0       0
+   880 ;;      Totals:         0      10       0       0
+   881 ;;Total ram usage:       10 bytes
+   882 ;; Hardware stack levels used:    1
+   883 ;; Hardware stack levels required when called:    2
+   884 ;; This function calls:
+   885 ;;		_motor_entrada_set
+   886 ;;		_motor_saida_set
+   887 ;; This function is called by:
+   888 ;;		_motor_task
+   889 ;; This function uses a non-reentrant model
+   890 ;;
+   891                           
+   892                           
+   893                           ;psect for function _motor_handle
+   894  0035                     _motor_handle:	
+   895                           
+   896                           ;incstack = 0
+   897                           ; Regs used in _motor_handle: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   898                           ;motor_handle@motor stored from wreg
+   899  0035  1283               	bcf	3,5	;RP0=0, select bank0
+   900  0036  1303               	bcf	3,6	;RP1=0, select bank0
+   901  0037  00B3               	movwf	motor_handle@motor
+   902                           
+   903                           ;motor.c: 32: unsigned char coils,step;
+   904                           ;motor.c: 34: if(motor->status==MOTOR_DESLIGADO){
+   905  0038  0833               	movf	motor_handle@motor,w
+   906  0039  3E02               	addlw	2
+   907  003A  0084               	movwf	4
+   908  003B  3002               	movlw	2
+   909  003C  1383               	bcf	3,7	;select IRP bank0
+   910  003D  0600               	xorwf	0,w
+   911  003E  1D03               	btfss	3,2
+   912  003F  2842               	goto	l1099
+   913                           
+   914                           ;motor.c: 36: coils = 0;
+   915  0040  01B1               	clrf	motor_handle@coils
+   916                           
+   917                           ;motor.c: 38: }else{
+   918  0041  0008               	return
+   919  0042                     l1099:	
+   920                           
+   921                           ;motor.c: 40: if(motor->voltas){
+   922  0042  0833               	movf	motor_handle@motor,w
+   923  0043  0084               	movwf	4
+   924  0044  0800               	movf	0,w
+   925  0045  1903               	btfsc	3,2
+   926  0046  2898               	goto	l1123
+   927                           
+   928                           ;motor.c: 42: step = ((motor->step++) % 4);
+   929  0047  0A33               	incf	motor_handle@motor,w
+   930  0048  0084               	movwf	4
+   931  0049  0800               	movf	0,w
+   932  004A  3903               	andlw	3
+   933  004B  00AA               	movwf	??_motor_handle
+   934  004C  082A               	movf	??_motor_handle,w
+   935  004D  00B2               	movwf	motor_handle@step
+   936  004E  3001               	movlw	1
+   937  004F  00AA               	movwf	??_motor_handle
+   938  0050  0A33               	incf	motor_handle@motor,w
+   939  0051  0084               	movwf	4
+   940  0052  082A               	movf	??_motor_handle,w
+   941  0053  0780               	addwf	0,f
+   942                           
+   943                           ;motor.c: 44: if(motor->direction==SENTIDO_HORARIO){
+   944  0054  0833               	movf	motor_handle@motor,w
+   945  0055  3E03               	addlw	3
+   946  0056  0084               	movwf	4
+   947  0057  0800               	movf	0,w
+   948  0058  1D03               	btfss	3,2
+   949  0059  2873               	goto	l1113
+   950                           
+   951                           ;motor.c: 46: coils = (!step? 0x02 : (0x01 << step));
+   952  005A  0832               	movf	motor_handle@step,w
+   953  005B  1903               	btfsc	3,2
+   954  005C  286D               	goto	l1111
+   955  005D  0A32               	incf	motor_handle@step,w
+   956  005E  00AA               	movwf	??_motor_handle
+   957  005F  3001               	movlw	1
+   958  0060  00AB               	movwf	??_motor_handle+1
+   959  0061  3000               	movlw	0
+   960  0062  00AC               	movwf	??_motor_handle+2
+   961  0063  2867               	goto	u554
+   962  0064                     u555:	
+   963  0064  1003               	clrc
+   964  0065  0DAB               	rlf	??_motor_handle+1,f
+   965  0066  0DAC               	rlf	??_motor_handle+2,f
+   966  0067                     u554:	
+   967  0067  0BAA               	decfsz	??_motor_handle,f
+   968  0068  2864               	goto	u555
+   969  0069  082B               	movf	??_motor_handle+1,w
+   970  006A  00AD               	movwf	_motor_handle$420
+   971  006B  082C               	movf	??_motor_handle+2,w
+   972  006C  2870               	goto	L1
+   973  006D                     l1111:	
+   974  006D  3002               	movlw	2
+   975  006E  00AD               	movwf	_motor_handle$420
+   976  006F  3000               	movlw	0
+   977  0070                     L1:	
+   978  0070  00AE               	movwf	_motor_handle$420+1
+   979  0071  082D               	movf	_motor_handle$420,w
+   980  0072  288D               	goto	L2
+   981  0073                     l1113:	
+   982                           ;motor.c: 48: } else{
+   983                           
+   984                           
+   985                           ;motor.c: 50: coils = (!step? 0x08: (0x01 >> step));
+   986  0073  0832               	movf	motor_handle@step,w
+   987  0074  1903               	btfsc	3,2
+   988  0075  2888               	goto	l1117
+   989  0076  0A32               	incf	motor_handle@step,w
+   990  0077  00AA               	movwf	??_motor_handle
+   991  0078  3001               	movlw	1
+   992  0079  00AB               	movwf	??_motor_handle+1
+   993  007A  3000               	movlw	0
+   994  007B  00AC               	movwf	??_motor_handle+2
+   995  007C  2880               	goto	u574
+   996  007D                     u575:	
+   997  007D  0D2C               	rlf	??_motor_handle+2,w
+   998  007E  0CAC               	rrf	??_motor_handle+2,f
+   999  007F  0CAB               	rrf	??_motor_handle+1,f
+  1000  0080                     u574:	
+  1001  0080  0BAA               	decfsz	??_motor_handle,f
+  1002  0081  287D               	goto	u575
+  1003  0082  1283               	bcf	3,5	;RP0=0, select bank0
+  1004  0083  1303               	bcf	3,6	;RP1=0, select bank0
+  1005  0084  082B               	movf	??_motor_handle+1,w
+  1006  0085  00AF               	movwf	_motor_handle$421
+  1007  0086  082C               	movf	??_motor_handle+2,w
+  1008  0087  288B               	goto	L3
+  1009  0088                     l1117:	
+  1010  0088  3008               	movlw	8
+  1011  0089  00AF               	movwf	_motor_handle$421
+  1012  008A  3000               	movlw	0
+  1013  008B                     L3:	
+  1014  008B  00B0               	movwf	_motor_handle$421+1
+  1015  008C  082F               	movf	_motor_handle$421,w
+  1016  008D                     L2:	
+  1017  008D  00AA               	movwf	??_motor_handle
+  1018  008E  082A               	movf	??_motor_handle,w
+  1019  008F  00B1               	movwf	motor_handle@coils
+  1020                           
+  1021                           ;motor.c: 51: }
+  1022                           ;motor.c: 53: if(step==0){
+  1023  0090  0832               	movf	motor_handle@step,w
+  1024  0091  1D03               	btfss	3,2
+  1025  0092  2898               	goto	l1123
+  1026                           
+  1027                           ;motor.c: 54: motor->voltas--;
+  1028  0093  0833               	movf	motor_handle@motor,w
+  1029  0094  0084               	movwf	4
+  1030  0095  3001               	movlw	1
+  1031  0096  1383               	bcf	3,7	;select IRP bank0
+  1032  0097  0280               	subwf	0,f
+  1033  0098                     l1123:	
+  1034                           
+  1035                           ;motor.c: 55: }
+  1036                           ;motor.c: 56: }
+  1037                           ;motor.c: 58: motor->set(coils);
+  1038  0098  0831               	movf	motor_handle@coils,w
+  1039  0099  00AA               	movwf	??_motor_handle
+  1040  009A  082A               	movf	??_motor_handle,w
+  1041  009B  00F4               	movwf	motor_saida_set@val
+  1042  009C  0833               	movf	motor_handle@motor,w
+  1043  009D  3E04               	addlw	4
+  1044  009E  0084               	movwf	4
+  1045  009F  1383               	bcf	3,7	;select IRP bank0
+  1046  00A0  0800               	movf	0,w
+  1047  00A1  202D               	fcall	fptable
+  1048  00A2  0008               	return
+  1049  00A3                     __end_of_motor_handle:	
+  1050                           
+  1051                           	psect	text5
+  1052  020E                     __ptext5:	
+  1053 ;; *************** function _motor_init *****************
+  1054 ;; Defined at:
+  1055 ;;		line 157 in file "motor/motor.c"
+  1056 ;; Parameters:    Size  Location     Type
+  1057 ;;		None
+  1058 ;; Auto vars:     Size  Location     Type
+  1059 ;;		None
+  1060 ;; Return value:  Size  Location     Type
+  1061 ;;                  1    wreg      void 
+  1062 ;; Registers used:
+  1063 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1064 ;; Tracked objects:
+  1065 ;;		On entry : 0/0
+  1066 ;;		On exit  : 0/0
+  1067 ;;		Unchanged: 0/0
+  1068 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1069 ;;      Params:         0       0       0       0
+  1070 ;;      Locals:         0       0       0       0
+  1071 ;;      Temps:          0       0       0       0
+  1072 ;;      Totals:         0       0       0       0
+  1073 ;;Total ram usage:        0 bytes
+  1074 ;; Hardware stack levels used:    1
+  1075 ;; Hardware stack levels required when called:    3
+  1076 ;; This function calls:
+  1077 ;;		_motor_entrada_init
+  1078 ;;		_motor_saida_init
+  1079 ;; This function is called by:
+  1080 ;;		_main
+  1081 ;; This function uses a non-reentrant model
+  1082 ;;
+  1083                           
+  1084                           
+  1085                           ;psect for function _motor_init
+  1086  020E                     _motor_init:	
+  1087                           
+  1088                           ;motor.c: 159: timer_motor = 20;
+  1089                           
+  1090                           ;incstack = 0
+  1091                           ; Regs used in _motor_init: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1092  020E  3014               	movlw	20
+  1093  020F  1283               	bcf	3,5	;RP0=0, select bank0
+  1094  0210  1303               	bcf	3,6	;RP1=0, select bank0
+  1095  0211  00B4               	movwf	_timer_motor
+  1096  0212  3000               	movlw	0
+  1097  0213  00B5               	movwf	_timer_motor+1
+  1098                           
+  1099                           ;motor.c: 160: motor_saida_init();
+  1100  0214  216C               	fcall	_motor_saida_init
+  1101                           
+  1102                           ;motor.c: 161: motor_entrada_init();
+  1103  0215  217F               	fcall	_motor_entrada_init
+  1104  0216  0008               	return
+  1105  0217                     __end_of_motor_init:	
+  1106                           
+  1107                           	psect	text6
+  1108  016C                     __ptext6:	
+  1109 ;; *************** function _motor_saida_init *****************
+  1110 ;; Defined at:
+  1111 ;;		line 139 in file "motor/motor.c"
+  1112 ;; Parameters:    Size  Location     Type
+  1113 ;;		None
+  1114 ;; Auto vars:     Size  Location     Type
+  1115 ;;		None
+  1116 ;; Return value:  Size  Location     Type
+  1117 ;;                  1    wreg      void 
+  1118 ;; Registers used:
+  1119 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1120 ;; Tracked objects:
+  1121 ;;		On entry : 0/0
+  1122 ;;		On exit  : 0/0
+  1123 ;;		Unchanged: 0/0
+  1124 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1125 ;;      Params:         0       0       0       0
+  1126 ;;      Locals:         0       0       0       0
+  1127 ;;      Temps:          1       0       0       0
+  1128 ;;      Totals:         1       0       0       0
+  1129 ;;Total ram usage:        1 bytes
+  1130 ;; Hardware stack levels used:    1
+  1131 ;; Hardware stack levels required when called:    2
+  1132 ;; This function calls:
+  1133 ;;		_motor_off
+  1134 ;;		_motor_saida_set
+  1135 ;; This function is called by:
+  1136 ;;		_motor_init
+  1137 ;; This function uses a non-reentrant model
+  1138 ;;
+  1139                           
+  1140                           
+  1141                           ;psect for function _motor_saida_init
+  1142  016C                     _motor_saida_init:	
+  1143                           
+  1144                           ;motor.c: 142: TRISB &= (~(0b10000000 | 0b01000000 | 0b00100000 | 0b00010000));
+  1145                           
+  1146                           ;incstack = 0
+  1147                           ; Regs used in _motor_saida_init: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1148  016C  300F               	movlw	15
+  1149  016D  00F6               	movwf	??_motor_saida_init
+  1150  016E  0876               	movf	??_motor_saida_init,w
+  1151  016F  1683               	bsf	3,5	;RP0=1, select bank1
+  1152  0170  1303               	bcf	3,6	;RP1=0, select bank1
+  1153  0171  0586               	andwf	6,f	;volatile
+  1154                           
+  1155                           ;motor.c: 144: motor_saida.direction = SENTIDO_HORARIO;
+  1156  0172  1283               	bcf	3,5	;RP0=0, select bank0
+  1157  0173  1303               	bcf	3,6	;RP1=0, select bank0
+  1158  0174  01A3               	clrf	_motor_saida+3
+  1159                           
+  1160                           ;motor.c: 145: motor_saida.step = 0;
+  1161  0175  01A1               	clrf	_motor_saida+1
+  1162                           
+  1163                           ;motor.c: 146: motor_saida.set = motor_saida_set;
+  1164  0176  3002               	movlw	(low (fp__motor_saida_set-fpbase))& (0+255)
+  1165  0177  00F6               	movwf	??_motor_saida_init
+  1166  0178  0876               	movf	??_motor_saida_init,w
+  1167  0179  00A4               	movwf	low ((_motor_saida| 0+4))
+  1168                           
+  1169                           ;motor.c: 148: motor_off(&motor_saida);
+  1170  017A  3020               	movlw	(low (_motor_saida| 0))& (0+255)
+  1171  017B  21ED               	fcall	_motor_off
+  1172                           
+  1173                           ;motor.c: 149: motor_saida_set(0);
+  1174  017C  01F4               	clrf	motor_saida_set@val
+  1175  017D  20D4               	fcall	_motor_saida_set
+  1176  017E  0008               	return
+  1177  017F                     __end_of_motor_saida_init:	
+  1178                           
+  1179                           	psect	text7
+  1180  012A                     __ptext7:	
+  1181 ;; *************** function _motor_entrada_set *****************
+  1182 ;; Defined at:
+  1183 ;;		line 94 in file "motor/motor.c"
+  1184 ;; Parameters:    Size  Location     Type
+  1185 ;;  val             1    4[COMMON] unsigned char 
+  1186 ;; Auto vars:     Size  Location     Type
+  1187 ;;		None
+  1188 ;; Return value:  Size  Location     Type
+  1189 ;;                  1    wreg      void 
+  1190 ;; Registers used:
+  1191 ;;		wreg, status,2, status,0
+  1192 ;; Tracked objects:
+  1193 ;;		On entry : 0/0
+  1194 ;;		On exit  : 0/0
+  1195 ;;		Unchanged: 0/0
+  1196 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1197 ;;      Params:         1       0       0       0
+  1198 ;;      Locals:         0       0       0       0
+  1199 ;;      Temps:          1       0       0       0
+  1200 ;;      Totals:         2       0       0       0
+  1201 ;;Total ram usage:        2 bytes
+  1202 ;; Hardware stack levels used:    1
+  1203 ;; Hardware stack levels required when called:    1
+  1204 ;; This function calls:
+  1205 ;;		Nothing
+  1206 ;; This function is called by:
+  1207 ;;		_motor_entrada_init
+  1208 ;;		_motor_handle
+  1209 ;; This function uses a non-reentrant model
+  1210 ;;
+  1211                           
+  1212                           
+  1213                           ;psect for function _motor_entrada_set
+  1214  012A                     _motor_entrada_set:	
+  1215                           
+  1216                           ;motor.c: 96: PORTAbits.RA1 = 0b00000010 & val;
+  1217                           
+  1218                           ;incstack = 0
+  1219                           ; Regs used in _motor_entrada_set: [wreg+status,2+status,0]
+  1220  012A  0874               	movf	motor_entrada_set@val,w
+  1221  012B  3902               	andlw	2
+  1222  012C  00F5               	movwf	??_motor_entrada_set
+  1223  012D  0DF5               	rlf	??_motor_entrada_set,f
+  1224  012E  1283               	bcf	3,5	;RP0=0, select bank0
+  1225  012F  1303               	bcf	3,6	;RP1=0, select bank0
+  1226  0130  0805               	movf	5,w	;volatile
+  1227  0131  0675               	xorwf	??_motor_entrada_set,w
+  1228  0132  39FD               	andlw	-3
+  1229  0133  0675               	xorwf	??_motor_entrada_set,w
+  1230  0134  0085               	movwf	5	;volatile
+  1231                           
+  1232                           ;motor.c: 97: PORTAbits.RA0 = 0b00000001 & val;
+  1233  0135  3001               	movlw	1
+  1234  0136  0574               	andwf	motor_entrada_set@val,w
+  1235  0137  00F5               	movwf	??_motor_entrada_set
+  1236  0138  0805               	movf	5,w	;volatile
+  1237  0139  0675               	xorwf	??_motor_entrada_set,w
+  1238  013A  39FE               	andlw	-2
+  1239  013B  0675               	xorwf	??_motor_entrada_set,w
+  1240  013C  0085               	movwf	5	;volatile
+  1241                           
+  1242                           ;motor.c: 98: PORTAbits.RA7 = 0b10000000 & val;
+  1243  013D  0874               	movf	motor_entrada_set@val,w
+  1244  013E  3980               	andlw	128
+  1245  013F  00F5               	movwf	??_motor_entrada_set
+  1246  0140  0CF5               	rrf	??_motor_entrada_set,f
+  1247  0141  0CF5               	rrf	??_motor_entrada_set,f
+  1248  0142  0805               	movf	5,w	;volatile
+  1249  0143  0675               	xorwf	??_motor_entrada_set,w
+  1250  0144  397F               	andlw	-129
+  1251  0145  0675               	xorwf	??_motor_entrada_set,w
+  1252  0146  0085               	movwf	5	;volatile
+  1253                           
+  1254                           ;motor.c: 99: PORTAbits.RA6 = 0b01000000 & val;
+  1255  0147  0874               	movf	motor_entrada_set@val,w
+  1256  0148  3940               	andlw	64
+  1257  0149  00F5               	movwf	??_motor_entrada_set
+  1258  014A  0EF5               	swapf	??_motor_entrada_set,f
+  1259  014B  0DF5               	rlf	??_motor_entrada_set,f
+  1260  014C  0DF5               	rlf	??_motor_entrada_set,f
+  1261  014D  0805               	movf	5,w	;volatile
+  1262  014E  0675               	xorwf	??_motor_entrada_set,w
+  1263  014F  39BF               	andlw	-65
+  1264  0150  0675               	xorwf	??_motor_entrada_set,w
+  1265  0151  0085               	movwf	5	;volatile
+  1266  0152  0008               	return
+  1267  0153                     __end_of_motor_entrada_set:	
+  1268                           
+  1269                           	psect	text8
+  1270  00D4                     __ptext8:	
+  1271 ;; *************** function _motor_saida_set *****************
+  1272 ;; Defined at:
+  1273 ;;		line 108 in file "motor/motor.c"
+  1274 ;; Parameters:    Size  Location     Type
+  1275 ;;  val             1    4[COMMON] unsigned char 
+  1276 ;; Auto vars:     Size  Location     Type
+  1277 ;;		None
+  1278 ;; Return value:  Size  Location     Type
+  1279 ;;                  1    wreg      void 
+  1280 ;; Registers used:
+  1281 ;;		wreg, status,2, status,0
+  1282 ;; Tracked objects:
+  1283 ;;		On entry : 0/0
+  1284 ;;		On exit  : 0/0
+  1285 ;;		Unchanged: 0/0
+  1286 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1287 ;;      Params:         1       0       0       0
+  1288 ;;      Locals:         0       0       0       0
+  1289 ;;      Temps:          1       0       0       0
+  1290 ;;      Totals:         2       0       0       0
+  1291 ;;Total ram usage:        2 bytes
+  1292 ;; Hardware stack levels used:    1
+  1293 ;; Hardware stack levels required when called:    1
+  1294 ;; This function calls:
+  1295 ;;		Nothing
+  1296 ;; This function is called by:
+  1297 ;;		_motor_saida_init
+  1298 ;;		_motor_handle
+  1299 ;; This function uses a non-reentrant model
+  1300 ;;
+  1301                           
+  1302                           
+  1303                           ;psect for function _motor_saida_set
+  1304  00D4                     _motor_saida_set:	
+  1305                           
+  1306                           ;motor.c: 110: PORTBbits.RB7 = 0b10000000 & val;
+  1307                           
+  1308                           ;incstack = 0
+  1309                           ; Regs used in _motor_saida_set: [wreg+status,2+status,0]
+  1310  00D4  0874               	movf	motor_saida_set@val,w
+  1311  00D5  3980               	andlw	128
+  1312  00D6  00F5               	movwf	??_motor_saida_set
+  1313  00D7  0CF5               	rrf	??_motor_saida_set,f
+  1314  00D8  0CF5               	rrf	??_motor_saida_set,f
+  1315  00D9  1283               	bcf	3,5	;RP0=0, select bank0
+  1316  00DA  1303               	bcf	3,6	;RP1=0, select bank0
+  1317  00DB  0806               	movf	6,w	;volatile
+  1318  00DC  0675               	xorwf	??_motor_saida_set,w
+  1319  00DD  397F               	andlw	-129
+  1320  00DE  0675               	xorwf	??_motor_saida_set,w
+  1321  00DF  0086               	movwf	6	;volatile
+  1322                           
+  1323                           ;motor.c: 111: PORTBbits.RB6 = 0b01000000 & val;
+  1324  00E0  0874               	movf	motor_saida_set@val,w
+  1325  00E1  3940               	andlw	64
+  1326  00E2  00F5               	movwf	??_motor_saida_set
+  1327  00E3  0EF5               	swapf	??_motor_saida_set,f
+  1328  00E4  0DF5               	rlf	??_motor_saida_set,f
+  1329  00E5  0DF5               	rlf	??_motor_saida_set,f
+  1330  00E6  0806               	movf	6,w	;volatile
+  1331  00E7  0675               	xorwf	??_motor_saida_set,w
+  1332  00E8  39BF               	andlw	-65
+  1333  00E9  0675               	xorwf	??_motor_saida_set,w
+  1334  00EA  0086               	movwf	6	;volatile
+  1335                           
+  1336                           ;motor.c: 112: PORTBbits.RB5 = 0b00100000 & val;
+  1337  00EB  0874               	movf	motor_saida_set@val,w
+  1338  00EC  3920               	andlw	32
+  1339  00ED  00F5               	movwf	??_motor_saida_set
+  1340  00EE  0EF5               	swapf	??_motor_saida_set,f
+  1341  00EF  0DF5               	rlf	??_motor_saida_set,f
+  1342  00F0  0806               	movf	6,w	;volatile
+  1343  00F1  0675               	xorwf	??_motor_saida_set,w
+  1344  00F2  39DF               	andlw	-33
+  1345  00F3  0675               	xorwf	??_motor_saida_set,w
+  1346  00F4  0086               	movwf	6	;volatile
+  1347                           
+  1348                           ;motor.c: 113: PORTBbits.RB4 = 0b00010000 & val;
+  1349  00F5  0874               	movf	motor_saida_set@val,w
+  1350  00F6  3910               	andlw	16
+  1351  00F7  00F5               	movwf	??_motor_saida_set
+  1352  00F8  0EF5               	swapf	??_motor_saida_set,f
+  1353  00F9  0806               	movf	6,w	;volatile
+  1354  00FA  0675               	xorwf	??_motor_saida_set,w
+  1355  00FB  39EF               	andlw	-17
+  1356  00FC  0675               	xorwf	??_motor_saida_set,w
+  1357  00FD  0086               	movwf	6	;volatile
+  1358  00FE  0008               	return
+  1359  00FF                     __end_of_motor_saida_set:	
+  1360                           
+  1361                           	psect	text9
+  1362  017F                     __ptext9:	
+  1363 ;; *************** function _motor_entrada_init *****************
+  1364 ;; Defined at:
+  1365 ;;		line 121 in file "motor/motor.c"
+  1366 ;; Parameters:    Size  Location     Type
+  1367 ;;		None
+  1368 ;; Auto vars:     Size  Location     Type
+  1369 ;;		None
+  1370 ;; Return value:  Size  Location     Type
+  1371 ;;                  1    wreg      void 
+  1372 ;; Registers used:
+  1373 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1374 ;; Tracked objects:
+  1375 ;;		On entry : 0/0
+  1376 ;;		On exit  : 0/0
+  1377 ;;		Unchanged: 0/0
+  1378 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1379 ;;      Params:         0       0       0       0
+  1380 ;;      Locals:         0       0       0       0
+  1381 ;;      Temps:          1       0       0       0
+  1382 ;;      Totals:         1       0       0       0
+  1383 ;;Total ram usage:        1 bytes
+  1384 ;; Hardware stack levels used:    1
+  1385 ;; Hardware stack levels required when called:    2
+  1386 ;; This function calls:
+  1387 ;;		_motor_entrada_set
+  1388 ;;		_motor_off
+  1389 ;; This function is called by:
+  1390 ;;		_motor_init
+  1391 ;; This function uses a non-reentrant model
+  1392 ;;
+  1393                           
+  1394                           
+  1395                           ;psect for function _motor_entrada_init
+  1396  017F                     _motor_entrada_init:	
+  1397                           
+  1398                           ;motor.c: 124: TRISA &= (~(0b10000000 | 0b01000000 | 0b00100000 | 0b00010000));
+  1399                           
+  1400                           ;incstack = 0
+  1401                           ; Regs used in _motor_entrada_init: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1402  017F  300F               	movlw	15
+  1403  0180  00F6               	movwf	??_motor_entrada_init
+  1404  0181  0876               	movf	??_motor_entrada_init,w
+  1405  0182  1683               	bsf	3,5	;RP0=1, select bank1
+  1406  0183  1303               	bcf	3,6	;RP1=0, select bank1
+  1407  0184  0585               	andwf	5,f	;volatile
+  1408                           
+  1409                           ;motor.c: 126: motor_entrada.direction = SENTIDO_HORARIO;
+  1410  0185  1283               	bcf	3,5	;RP0=0, select bank0
+  1411  0186  1303               	bcf	3,6	;RP1=0, select bank0
+  1412  0187  01A8               	clrf	_motor_entrada+3
+  1413                           
+  1414                           ;motor.c: 127: motor_entrada.step = 0;
+  1415  0188  01A6               	clrf	_motor_entrada+1
+  1416                           
+  1417                           ;motor.c: 128: motor_entrada.set = motor_entrada_set;
+  1418  0189  3001               	movlw	(low (fp__motor_entrada_set-fpbase))& (0+255)
+  1419  018A  00F6               	movwf	??_motor_entrada_init
+  1420  018B  0876               	movf	??_motor_entrada_init,w
+  1421  018C  00A9               	movwf	low ((_motor_entrada| 0+4))
+  1422                           
+  1423                           ;motor.c: 130: motor_off(&motor_entrada);
+  1424  018D  3025               	movlw	(low (_motor_entrada| 0))& (0+255)
+  1425  018E  21ED               	fcall	_motor_off
+  1426                           
+  1427                           ;motor.c: 131: motor_entrada_set(0);
+  1428  018F  01F4               	clrf	motor_entrada_set@val
+  1429  0190  212A               	fcall	_motor_entrada_set
+  1430  0191  0008               	return
+  1431  0192                     __end_of_motor_entrada_init:	
+  1432                           
+  1433                           	psect	text10
+  1434  01ED                     __ptext10:	
+  1435 ;; *************** function _motor_off *****************
+  1436 ;; Defined at:
+  1437 ;;		line 82 in file "motor/motor.c"
+  1438 ;; Parameters:    Size  Location     Type
+  1439 ;;  motor           1    wreg     PTR struct .
+  1440 ;;		 -> motor_saida(5), motor_entrada(5), 
+  1441 ;; Auto vars:     Size  Location     Type
+  1442 ;;  motor           1    5[COMMON] PTR struct .
+  1443 ;;		 -> motor_saida(5), motor_entrada(5), 
+  1444 ;; Return value:  Size  Location     Type
+  1445 ;;                  1    wreg      void 
+  1446 ;; Registers used:
+  1447 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1448 ;; Tracked objects:
+  1449 ;;		On entry : 0/0
+  1450 ;;		On exit  : 0/0
+  1451 ;;		Unchanged: 0/0
+  1452 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1453 ;;      Params:         0       0       0       0
+  1454 ;;      Locals:         1       0       0       0
+  1455 ;;      Temps:          1       0       0       0
+  1456 ;;      Totals:         2       0       0       0
+  1457 ;;Total ram usage:        2 bytes
+  1458 ;; Hardware stack levels used:    1
+  1459 ;; Hardware stack levels required when called:    1
+  1460 ;; This function calls:
+  1461 ;;		Nothing
+  1462 ;; This function is called by:
+  1463 ;;		_motor_entrada_init
+  1464 ;;		_motor_saida_init
+  1465 ;; This function uses a non-reentrant model
+  1466 ;;
+  1467                           
+  1468                           
+  1469                           ;psect for function _motor_off
+  1470  01ED                     _motor_off:	
+  1471                           
+  1472                           ;incstack = 0
+  1473                           ; Regs used in _motor_off: [wreg-fsr0h+status,2+status,0]
+  1474                           ;motor_off@motor stored from wreg
+  1475  01ED  00F5               	movwf	motor_off@motor
+  1476                           
+  1477                           ;motor.c: 84: motor->status = MOTOR_DESLIGADO;
+  1478  01EE  3002               	movlw	2
+  1479  01EF  00F4               	movwf	??_motor_off
+  1480  01F0  0875               	movf	motor_off@motor,w
+  1481  01F1  3E02               	addlw	2
+  1482  01F2  0084               	movwf	4
+  1483  01F3  0874               	movf	??_motor_off,w
+  1484  01F4  1383               	bcf	3,7	;select IRP bank0
+  1485  01F5  0080               	movwf	0
+  1486                           
+  1487                           ;motor.c: 85: motor->voltas = 0;
+  1488  01F6  0875               	movf	motor_off@motor,w
+  1489  01F7  0084               	movwf	4
+  1490  01F8  0180               	clrf	0
+  1491  01F9  0008               	return
+  1492  01FA                     __end_of_motor_off:	
+  1493                           
+  1494                           	psect	text11
+  1495  01B3                     __ptext11:	
+  1496 ;; *************** function _key_read *****************
+  1497 ;; Defined at:
+  1498 ;;		line 10 in file "ihm/key.c"
+  1499 ;; Parameters:    Size  Location     Type
+  1500 ;;		None
+  1501 ;; Auto vars:     Size  Location     Type
+  1502 ;;		None
+  1503 ;; Return value:  Size  Location     Type
+  1504 ;;                  1    wreg      unsigned char 
+  1505 ;; Registers used:
+  1506 ;;		wreg, status,2, status,0
+  1507 ;; Tracked objects:
+  1508 ;;		On entry : 0/0
+  1509 ;;		On exit  : 0/0
+  1510 ;;		Unchanged: 0/0
+  1511 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1512 ;;      Params:         0       0       0       0
+  1513 ;;      Locals:         0       0       0       0
+  1514 ;;      Temps:          1       0       0       0
+  1515 ;;      Totals:         1       0       0       0
+  1516 ;;Total ram usage:        1 bytes
+  1517 ;; Hardware stack levels used:    1
+  1518 ;; Hardware stack levels required when called:    1
+  1519 ;; This function calls:
+  1520 ;;		Nothing
+  1521 ;; This function is called by:
+  1522 ;;		_main
+  1523 ;; This function uses a non-reentrant model
+  1524 ;;
+  1525                           
+  1526                           
+  1527                           ;psect for function _key_read
+  1528  01B3                     _key_read:	
+  1529                           
+  1530                           ;key.c: 12: if(!PORTAbits.RA2 ){
+  1531                           
+  1532                           ;incstack = 0
+  1533                           ; Regs used in _key_read: [wreg+status,2+status,0]
+  1534  01B3  1283               	bcf	3,5	;RP0=0, select bank0
+  1535  01B4  1303               	bcf	3,6	;RP1=0, select bank0
+  1536  01B5  1905               	btfsc	5,2	;volatile
+  1537  01B6  29BB               	goto	l817
+  1538                           
+  1539                           ;key.c: 14: debounce_botao = 50;
+  1540  01B7  3032               	movlw	50
+  1541  01B8  00F4               	movwf	??_key_read
+  1542  01B9  0874               	movf	??_key_read,w
+  1543  01BA  00F9               	movwf	_debounce_botao
+  1544  01BB                     l817:	
+  1545                           
+  1546                           ;key.c: 15: }
+  1547                           ;key.c: 17: return !debounce_botao;
+  1548  01BB  0879               	movf	_debounce_botao,w
+  1549  01BC  1D03               	btfss	3,2
+  1550  01BD  29C0               	goto	u160
+  1551  01BE  3001               	movlw	1
+  1552  01BF  0008               	return
+  1553  01C0                     u160:	
+  1554  01C0  3000               	movlw	0
+  1555  01C1  0008               	return
+  1556  01C2                     __end_of_key_read:	
+  1557                           
+  1558                           	psect	text12
+  1559  0220                     __ptext12:	
+  1560 ;; *************** function _ihm_init *****************
+  1561 ;; Defined at:
+  1562 ;;		line 25 in file "ihm/key.c"
+  1563 ;; Parameters:    Size  Location     Type
+  1564 ;;		None
+  1565 ;; Auto vars:     Size  Location     Type
+  1566 ;;		None
+  1567 ;; Return value:  Size  Location     Type
+  1568 ;;                  1    wreg      void 
+  1569 ;; Registers used:
+  1570 ;;		wreg
+  1571 ;; Tracked objects:
+  1572 ;;		On entry : 0/0
+  1573 ;;		On exit  : 0/0
+  1574 ;;		Unchanged: 0/0
+  1575 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1576 ;;      Params:         0       0       0       0
+  1577 ;;      Locals:         0       0       0       0
+  1578 ;;      Temps:          1       0       0       0
+  1579 ;;      Totals:         1       0       0       0
+  1580 ;;Total ram usage:        1 bytes
+  1581 ;; Hardware stack levels used:    1
+  1582 ;; Hardware stack levels required when called:    1
+  1583 ;; This function calls:
+  1584 ;;		Nothing
+  1585 ;; This function is called by:
+  1586 ;;		_main
+  1587 ;; This function uses a non-reentrant model
+  1588 ;;
+  1589                           
+  1590                           
+  1591                           ;psect for function _ihm_init
+  1592  0220                     _ihm_init:	
+  1593                           
+  1594                           ;key.c: 27: TRISA |= 0b00000100;
+  1595                           
+  1596                           ;incstack = 0
+  1597                           ; Regs used in _ihm_init: [wreg]
+  1598  0220  1683               	bsf	3,5	;RP0=1, select bank1
+  1599  0221  1303               	bcf	3,6	;RP1=0, select bank1
+  1600  0222  1505               	bsf	5,2	;volatile
+  1601                           
+  1602                           ;key.c: 29: debounce_botao = 50;
+  1603  0223  3032               	movlw	50
+  1604  0224  00F4               	movwf	??_ihm_init
+  1605  0225  0874               	movf	??_ihm_init,w
+  1606  0226  00F9               	movwf	_debounce_botao
+  1607  0227  0008               	return
+  1608  0228                     __end_of_ihm_init:	
+  1609                           
+  1610                           	psect	text13
+  1611  0235                     __ptext13:	
+  1612 ;; *************** function _cancela_task *****************
+  1613 ;; Defined at:
+  1614 ;;		line 17 in file "cancela/cancela.c"
+  1615 ;; Parameters:    Size  Location     Type
+  1616 ;;		None
+  1617 ;; Auto vars:     Size  Location     Type
+  1618 ;;		None
+  1619 ;; Return value:  Size  Location     Type
+  1620 ;;                  1    wreg      void 
+  1621 ;; Registers used:
+  1622 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1623 ;; Tracked objects:
+  1624 ;;		On entry : 0/0
+  1625 ;;		On exit  : 0/0
+  1626 ;;		Unchanged: 0/0
+  1627 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1628 ;;      Params:         0       0       0       0
+  1629 ;;      Locals:         0       0       0       0
+  1630 ;;      Temps:          0       0       0       0
+  1631 ;;      Totals:         0       0       0       0
+  1632 ;;Total ram usage:        0 bytes
+  1633 ;; Hardware stack levels used:    1
+  1634 ;; Hardware stack levels required when called:    4
+  1635 ;; This function calls:
+  1636 ;;		_handle_cancela_entrada
+  1637 ;;		_handle_cancela_saida
+  1638 ;; This function is called by:
+  1639 ;;		_main
+  1640 ;; This function uses a non-reentrant model
+  1641 ;;
+  1642                           
+  1643                           
+  1644                           ;psect for function _cancela_task
+  1645  0235                     _cancela_task:	
+  1646                           
+  1647                           ;cancela.c: 19: handle_cancela_entrada();
+  1648                           
+  1649                           ;incstack = 0
+  1650                           ; Regs used in _cancela_task: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1651  0235  20FF               	fcall	_handle_cancela_entrada
+  1652                           
+  1653                           ;cancela.c: 21: handle_cancela_saida();
+  1654  0236  2239               	fcall	_handle_cancela_saida
+  1655  0237  0008               	return
+  1656  0238                     __end_of_cancela_task:	
+  1657                           
+  1658                           	psect	text14
+  1659  0239                     __ptext14:	
+  1660 ;; *************** function _handle_cancela_saida *****************
+  1661 ;; Defined at:
+  1662 ;;		line 62 in file "cancela/cancela.c"
+  1663 ;; Parameters:    Size  Location     Type
+  1664 ;;		None
+  1665 ;; Auto vars:     Size  Location     Type
+  1666 ;;		None
+  1667 ;; Return value:  Size  Location     Type
+  1668 ;;                  1    wreg      void 
+  1669 ;; Registers used:
+  1670 ;;		None
+  1671 ;; Tracked objects:
+  1672 ;;		On entry : 0/0
+  1673 ;;		On exit  : 0/0
+  1674 ;;		Unchanged: 0/0
+  1675 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1676 ;;      Params:         0       0       0       0
+  1677 ;;      Locals:         0       0       0       0
+  1678 ;;      Temps:          0       0       0       0
+  1679 ;;      Totals:         0       0       0       0
+  1680 ;;Total ram usage:        0 bytes
+  1681 ;; Hardware stack levels used:    1
+  1682 ;; Hardware stack levels required when called:    1
+  1683 ;; This function calls:
+  1684 ;;		Nothing
+  1685 ;; This function is called by:
+  1686 ;;		_cancela_task
+  1687 ;; This function uses a non-reentrant model
+  1688 ;;
+  1689                           
+  1690                           
+  1691                           ;psect for function _handle_cancela_saida
+  1692  0239                     _handle_cancela_saida:	
+  1693                           
+  1694                           ;incstack = 0
+  1695                           ; Regs used in _handle_cancela_saida: []
+  1696  0239  0008               	return
+  1697  023A                     __end_of_handle_cancela_saida:	
+  1698                           
+  1699                           	psect	text15
+  1700  00FF                     __ptext15:	
+  1701 ;; *************** function _handle_cancela_entrada *****************
+  1702 ;; Defined at:
+  1703 ;;		line 29 in file "cancela/cancela.c"
+  1704 ;; Parameters:    Size  Location     Type
+  1705 ;;		None
+  1706 ;; Auto vars:     Size  Location     Type
+  1707 ;;		None
+  1708 ;; Return value:  Size  Location     Type
+  1709 ;;                  1    wreg      void 
+  1710 ;; Registers used:
+  1711 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1712 ;; Tracked objects:
+  1713 ;;		On entry : 0/0
+  1714 ;;		On exit  : 0/0
+  1715 ;;		Unchanged: 0/0
+  1716 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1717 ;;      Params:         0       0       0       0
+  1718 ;;      Locals:         0       0       0       0
+  1719 ;;      Temps:          0       0       0       0
+  1720 ;;      Totals:         0       0       0       0
+  1721 ;;Total ram usage:        0 bytes
+  1722 ;; Hardware stack levels used:    1
+  1723 ;; Hardware stack levels required when called:    3
+  1724 ;; This function calls:
+  1725 ;;		_cancela_entrada_close
+  1726 ;;		_cancela_entrada_open
+  1727 ;;		_ticket_ok
+  1728 ;;		_veiculo_presente_entrada
+  1729 ;; This function is called by:
+  1730 ;;		_cancela_task
+  1731 ;; This function uses a non-reentrant model
+  1732 ;;
+  1733                           
+  1734                           
+  1735                           ;psect for function _handle_cancela_entrada
+  1736  00FF                     _handle_cancela_entrada:	
+  1737                           
+  1738                           ;cancela.c: 31: if(cancela_entrada == CANCELA_REQUEST_TICKET){
+  1739                           
+  1740                           ;incstack = 0
+  1741                           ; Regs used in _handle_cancela_entrada: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1742  00FF  0378               	decf	_cancela_entrada,w
+  1743  0100  1D03               	btfss	3,2
+  1744  0101  2919               	goto	l1087
+  1745                           
+  1746                           ;cancela.c: 33: if(!timer_signal){
+  1747  0102  1283               	bcf	3,5	;RP0=0, select bank0
+  1748  0103  1303               	bcf	3,6	;RP1=0, select bank0
+  1749  0104  0838               	movf	_timer_signal,w
+  1750  0105  0439               	iorwf	_timer_signal+1,w
+  1751  0106  1D03               	btfss	3,2
+  1752  0107  0008               	return
+  1753                           
+  1754                           ;cancela.c: 35: PORTBbits.RB0 = 0;
+  1755  0108  1006               	bcf	6,0	;volatile
+  1756                           
+  1757                           ;cancela.c: 37: if(veiculo_presente_entrada() && ticket_ok()){
+  1758  0109  2217               	fcall	_veiculo_presente_entrada
+  1759  010A  3A00               	xorlw	0
+  1760  010B  1903               	skipnz
+  1761  010C  0008               	return
+  1762  010D  2228               	fcall	_ticket_ok
+  1763  010E  3A00               	xorlw	0
+  1764  010F  1903               	skipnz
+  1765  0110  0008               	return
+  1766                           
+  1767                           ;cancela.c: 39: cancela_entrada_open();
+  1768  0111  21DF               	fcall	_cancela_entrada_open
+  1769                           
+  1770                           ;cancela.c: 41: timer_close = 5000;
+  1771  0112  3088               	movlw	136
+  1772  0113  1283               	bcf	3,5	;RP0=0, select bank0
+  1773  0114  1303               	bcf	3,6	;RP1=0, select bank0
+  1774  0115  00B6               	movwf	_timer_close
+  1775  0116  3013               	movlw	19
+  1776  0117  00B7               	movwf	_timer_close+1
+  1777                           
+  1778                           ;cancela.c: 42: }
+  1779                           ;cancela.c: 43: }
+  1780                           ;cancela.c: 44: }else if(cancela_entrada == CANCELA_OPEN){
+  1781  0118  0008               	return
+  1782  0119                     l1087:	
+  1783  0119  3002               	movlw	2
+  1784  011A  0678               	xorwf	_cancela_entrada,w
+  1785  011B  1D03               	btfss	3,2
+  1786  011C  0008               	return
+  1787                           
+  1788                           ;cancela.c: 46: if(veiculo_presente_entrada()){
+  1789  011D  2217               	fcall	_veiculo_presente_entrada
+  1790  011E  3A00               	xorlw	0
+  1791  011F  1903               	skipnz
+  1792  0120  2928               	goto	l1093
+  1793                           
+  1794                           ;cancela.c: 48: timer_close = 5000;
+  1795  0121  3088               	movlw	136
+  1796  0122  1283               	bcf	3,5	;RP0=0, select bank0
+  1797  0123  1303               	bcf	3,6	;RP1=0, select bank0
+  1798  0124  00B6               	movwf	_timer_close
+  1799  0125  3013               	movlw	19
+  1800  0126  00B7               	movwf	_timer_close+1
+  1801                           
+  1802                           ;cancela.c: 50: }else{
+  1803  0127  0008               	return
+  1804  0128                     l1093:	
+  1805                           
+  1806                           ;cancela.c: 52: cancela_entrada_close();
+  1807  0128  21C2               	fcall	_cancela_entrada_close
+  1808  0129  0008               	return
+  1809  012A                     __end_of_handle_cancela_entrada:	
+  1810                           
+  1811                           	psect	text16
+  1812  0217                     __ptext16:	
+  1813 ;; *************** function _veiculo_presente_entrada *****************
+  1814 ;; Defined at:
+  1815 ;;		line 157 in file "cancela/cancela.c"
+  1816 ;; Parameters:    Size  Location     Type
+  1817 ;;		None
+  1818 ;; Auto vars:     Size  Location     Type
+  1819 ;;		None
+  1820 ;; Return value:  Size  Location     Type
+  1821 ;;                  1    wreg      unsigned char 
+  1822 ;; Registers used:
+  1823 ;;		wreg, status,0
+  1824 ;; Tracked objects:
+  1825 ;;		On entry : 0/0
+  1826 ;;		On exit  : 0/0
+  1827 ;;		Unchanged: 0/0
+  1828 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1829 ;;      Params:         0       0       0       0
+  1830 ;;      Locals:         0       0       0       0
+  1831 ;;      Temps:          0       0       0       0
+  1832 ;;      Totals:         0       0       0       0
+  1833 ;;Total ram usage:        0 bytes
+  1834 ;; Hardware stack levels used:    1
+  1835 ;; Hardware stack levels required when called:    1
+  1836 ;; This function calls:
+  1837 ;;		Nothing
+  1838 ;; This function is called by:
+  1839 ;;		_handle_cancela_entrada
+  1840 ;; This function uses a non-reentrant model
+  1841 ;;
+  1842                           
+  1843                           
+  1844                           ;psect for function _veiculo_presente_entrada
+  1845  0217                     _veiculo_presente_entrada:	
+  1846                           
+  1847                           ;cancela.c: 159: return PORTAbits.RA3==0;
+  1848                           
+  1849                           ;incstack = 0
+  1850                           ; Regs used in _veiculo_presente_entrada: [wreg+status,0]
+  1851  0217  1003               	clrc
+  1852  0218  1283               	bcf	3,5	;RP0=0, select bank0
+  1853  0219  1303               	bcf	3,6	;RP1=0, select bank0
+  1854  021A  1D85               	btfss	5,3	;volatile
+  1855  021B  1403               	setc
+  1856  021C  3000               	movlw	0
+  1857  021D  1803               	skipnc
+  1858  021E  3001               	movlw	1
+  1859  021F  0008               	return
+  1860  0220                     __end_of_veiculo_presente_entrada:	
+  1861                           
+  1862                           	psect	text17
+  1863  0228                     __ptext17:	
+  1864 ;; *************** function _ticket_ok *****************
+  1865 ;; Defined at:
+  1866 ;;		line 179 in file "cancela/cancela.c"
+  1867 ;; Parameters:    Size  Location     Type
+  1868 ;;		None
+  1869 ;; Auto vars:     Size  Location     Type
+  1870 ;;		None
+  1871 ;; Return value:  Size  Location     Type
+  1872 ;;                  1    wreg      unsigned char 
+  1873 ;; Registers used:
+  1874 ;;		wreg, status,2, status,0
+  1875 ;; Tracked objects:
+  1876 ;;		On entry : 0/0
+  1877 ;;		On exit  : 0/0
+  1878 ;;		Unchanged: 0/0
+  1879 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1880 ;;      Params:         0       0       0       0
+  1881 ;;      Locals:         0       0       0       0
+  1882 ;;      Temps:          1       0       0       0
+  1883 ;;      Totals:         1       0       0       0
+  1884 ;;Total ram usage:        1 bytes
+  1885 ;; Hardware stack levels used:    1
+  1886 ;; Hardware stack levels required when called:    1
+  1887 ;; This function calls:
+  1888 ;;		Nothing
+  1889 ;; This function is called by:
+  1890 ;;		_handle_cancela_entrada
+  1891 ;; This function uses a non-reentrant model
+  1892 ;;
+  1893                           
+  1894                           
+  1895                           ;psect for function _ticket_ok
+  1896  0228                     _ticket_ok:	
+  1897                           
+  1898                           ;cancela.c: 181: return PORTAbits.RA5==1;
+  1899                           
+  1900                           ;incstack = 0
+  1901                           ; Regs used in _ticket_ok: [wreg+status,2+status,0]
+  1902  0228  1283               	bcf	3,5	;RP0=0, select bank0
+  1903  0229  1303               	bcf	3,6	;RP1=0, select bank0
+  1904  022A  0E05               	swapf	5,w	;volatile
+  1905  022B  00F4               	movwf	??_ticket_ok
+  1906  022C  0C74               	rrf	??_ticket_ok,w
+  1907  022D  3901               	andlw	1
+  1908  022E  0008               	return
+  1909  022F                     __end_of_ticket_ok:	
+  1910                           
+  1911                           	psect	text18
+  1912  01DF                     __ptext18:	
+  1913 ;; *************** function _cancela_entrada_open *****************
+  1914 ;; Defined at:
+  1915 ;;		line 71 in file "cancela/cancela.c"
+  1916 ;; Parameters:    Size  Location     Type
+  1917 ;;		None
+  1918 ;; Auto vars:     Size  Location     Type
+  1919 ;;		None
+  1920 ;; Return value:  Size  Location     Type
+  1921 ;;                  1    wreg      void 
+  1922 ;; Registers used:
+  1923 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1924 ;; Tracked objects:
+  1925 ;;		On entry : 0/0
+  1926 ;;		On exit  : 0/0
+  1927 ;;		Unchanged: 0/0
+  1928 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1929 ;;      Params:         0       0       0       0
+  1930 ;;      Locals:         0       0       0       0
+  1931 ;;      Temps:          0       1       0       0
+  1932 ;;      Totals:         0       1       0       0
+  1933 ;;Total ram usage:        1 bytes
+  1934 ;; Hardware stack levels used:    1
+  1935 ;; Hardware stack levels required when called:    2
+  1936 ;; This function calls:
+  1937 ;;		_motor_start
+  1938 ;; This function is called by:
+  1939 ;;		_handle_cancela_entrada
+  1940 ;; This function uses a non-reentrant model
+  1941 ;;
+  1942                           
+  1943                           
+  1944                           ;psect for function _cancela_entrada_open
+  1945  01DF                     _cancela_entrada_open:	
+  1946                           
+  1947                           ;cancela.c: 73: cancela_entrada = CANCELA_OPEN;
+  1948                           
+  1949                           ;incstack = 0
+  1950                           ; Regs used in _cancela_entrada_open: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1951  01DF  3002               	movlw	2
+  1952  01E0  1283               	bcf	3,5	;RP0=0, select bank0
+  1953  01E1  1303               	bcf	3,6	;RP1=0, select bank0
+  1954  01E2  00AB               	movwf	??_cancela_entrada_open
+  1955  01E3  082B               	movf	??_cancela_entrada_open,w
+  1956  01E4  00F8               	movwf	_cancela_entrada
+  1957                           
+  1958                           ;cancela.c: 75: motor_start(&motor_entrada,SENTIDO_HORARIO,3);
+  1959  01E5  01F4               	clrf	motor_start@direction
+  1960  01E6  3003               	movlw	3
+  1961  01E7  00AB               	movwf	??_cancela_entrada_open
+  1962  01E8  082B               	movf	??_cancela_entrada_open,w
+  1963  01E9  00F5               	movwf	motor_start@voltas
+  1964  01EA  3025               	movlw	(low (_motor_entrada| 0))& (0+255)
+  1965  01EB  2153               	fcall	_motor_start
+  1966  01EC  0008               	return
+  1967  01ED                     __end_of_cancela_entrada_open:	
+  1968                           
+  1969                           	psect	text19
+  1970  01C2                     __ptext19:	
+  1971 ;; *************** function _cancela_entrada_close *****************
+  1972 ;; Defined at:
+  1973 ;;		line 84 in file "cancela/cancela.c"
+  1974 ;; Parameters:    Size  Location     Type
+  1975 ;;		None
+  1976 ;; Auto vars:     Size  Location     Type
+  1977 ;;		None
+  1978 ;; Return value:  Size  Location     Type
+  1979 ;;                  1    wreg      void 
+  1980 ;; Registers used:
+  1981 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1982 ;; Tracked objects:
+  1983 ;;		On entry : 0/0
+  1984 ;;		On exit  : 0/0
+  1985 ;;		Unchanged: 0/0
+  1986 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1987 ;;      Params:         0       0       0       0
+  1988 ;;      Locals:         0       0       0       0
+  1989 ;;      Temps:          0       1       0       0
+  1990 ;;      Totals:         0       1       0       0
+  1991 ;;Total ram usage:        1 bytes
+  1992 ;; Hardware stack levels used:    1
+  1993 ;; Hardware stack levels required when called:    2
+  1994 ;; This function calls:
+  1995 ;;		_motor_start
+  1996 ;; This function is called by:
+  1997 ;;		_handle_cancela_entrada
+  1998 ;; This function uses a non-reentrant model
+  1999 ;;
+  2000                           
+  2001                           
+  2002                           ;psect for function _cancela_entrada_close
+  2003  01C2                     _cancela_entrada_close:	
+  2004                           
+  2005                           ;cancela.c: 86: cancela_entrada = CANCELA_CLOSE;
+  2006                           
+  2007                           ;incstack = 0
+  2008                           ; Regs used in _cancela_entrada_close: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  2009  01C2  3003               	movlw	3
+  2010  01C3  1283               	bcf	3,5	;RP0=0, select bank0
+  2011  01C4  1303               	bcf	3,6	;RP1=0, select bank0
+  2012  01C5  00AB               	movwf	??_cancela_entrada_close
+  2013  01C6  082B               	movf	??_cancela_entrada_close,w
+  2014  01C7  00F8               	movwf	_cancela_entrada
+  2015                           
+  2016                           ;cancela.c: 88: motor_start(&motor_entrada,SENTIDO_ANTI_HORARIO,3);
+  2017  01C8  01F4               	clrf	motor_start@direction
+  2018  01C9  0AF4               	incf	motor_start@direction,f
+  2019  01CA  3003               	movlw	3
+  2020  01CB  00AB               	movwf	??_cancela_entrada_close
+  2021  01CC  082B               	movf	??_cancela_entrada_close,w
+  2022  01CD  00F5               	movwf	motor_start@voltas
+  2023  01CE  3025               	movlw	(low (_motor_entrada| 0))& (0+255)
+  2024  01CF  2153               	fcall	_motor_start
+  2025  01D0  0008               	return
+  2026  01D1                     __end_of_cancela_entrada_close:	
+  2027                           
+  2028                           	psect	text20
+  2029  0153                     __ptext20:	
+  2030 ;; *************** function _motor_start *****************
+  2031 ;; Defined at:
+  2032 ;;		line 69 in file "motor/motor.c"
+  2033 ;; Parameters:    Size  Location     Type
+  2034 ;;  motor           1    wreg     PTR struct .
+  2035 ;;		 -> motor_saida(5), motor_entrada(5), 
+  2036 ;;  direction       1    4[COMMON] enum E615
+  2037 ;;  voltas          1    5[COMMON] unsigned char 
+  2038 ;; Auto vars:     Size  Location     Type
+  2039 ;;  motor           1    0[BANK0 ] PTR struct .
+  2040 ;;		 -> motor_saida(5), motor_entrada(5), 
+  2041 ;; Return value:  Size  Location     Type
+  2042 ;;                  1    wreg      void 
+  2043 ;; Registers used:
+  2044 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  2045 ;; Tracked objects:
+  2046 ;;		On entry : 0/0
+  2047 ;;		On exit  : 0/0
+  2048 ;;		Unchanged: 0/0
+  2049 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2050 ;;      Params:         2       0       0       0
+  2051 ;;      Locals:         0       1       0       0
+  2052 ;;      Temps:          1       0       0       0
+  2053 ;;      Totals:         3       1       0       0
+  2054 ;;Total ram usage:        4 bytes
+  2055 ;; Hardware stack levels used:    1
+  2056 ;; Hardware stack levels required when called:    1
+  2057 ;; This function calls:
+  2058 ;;		Nothing
+  2059 ;; This function is called by:
+  2060 ;;		_cancela_entrada_open
+  2061 ;;		_cancela_entrada_close
+  2062 ;;		_cancela_saida_open
+  2063 ;;		_cancela_saida_close
+  2064 ;; This function uses a non-reentrant model
+  2065 ;;
+  2066                           
+  2067                           
+  2068                           ;psect for function _motor_start
+  2069  0153                     _motor_start:	
+  2070                           
+  2071                           ;incstack = 0
+  2072                           ; Regs used in _motor_start: [wreg-fsr0h+status,2+status,0]
+  2073                           ;motor_start@motor stored from wreg
+  2074  0153  1283               	bcf	3,5	;RP0=0, select bank0
+  2075  0154  1303               	bcf	3,6	;RP1=0, select bank0
+  2076  0155  00AA               	movwf	motor_start@motor
+  2077                           
+  2078                           ;motor.c: 71: motor->status = MOTOR_LIGADO;
+  2079  0156  3003               	movlw	3
+  2080  0157  00F6               	movwf	??_motor_start
+  2081  0158  082A               	movf	motor_start@motor,w
+  2082  0159  3E02               	addlw	2
+  2083  015A  0084               	movwf	4
+  2084  015B  0876               	movf	??_motor_start,w
+  2085  015C  1383               	bcf	3,7	;select IRP bank0
+  2086  015D  0080               	movwf	0
+  2087                           
+  2088                           ;motor.c: 72: motor->direction = direction;
+  2089  015E  0874               	movf	motor_start@direction,w
+  2090  015F  00F6               	movwf	??_motor_start
+  2091  0160  082A               	movf	motor_start@motor,w
+  2092  0161  3E03               	addlw	3
+  2093  0162  0084               	movwf	4
+  2094  0163  0876               	movf	??_motor_start,w
+  2095  0164  0080               	movwf	0
+  2096                           
+  2097                           ;motor.c: 73: motor->voltas = voltas;
+  2098  0165  0875               	movf	motor_start@voltas,w
+  2099  0166  00F6               	movwf	??_motor_start
+  2100  0167  082A               	movf	motor_start@motor,w
+  2101  0168  0084               	movwf	4
+  2102  0169  0876               	movf	??_motor_start,w
+  2103  016A  0080               	movwf	0
+  2104  016B  0008               	return
+  2105  016C                     __end_of_motor_start:	
+  2106                           
+  2107                           	psect	text21
+  2108  01A3                     __ptext21:	
+  2109 ;; *************** function _cancela_init *****************
+  2110 ;; Defined at:
+  2111 ;;		line 123 in file "cancela/cancela.c"
+  2112 ;; Parameters:    Size  Location     Type
+  2113 ;;		None
+  2114 ;; Auto vars:     Size  Location     Type
+  2115 ;;		None
+  2116 ;; Return value:  Size  Location     Type
+  2117 ;;                  1    wreg      void 
+  2118 ;; Registers used:
+  2119 ;;		wreg, status,2, status,0
+  2120 ;; Tracked objects:
+  2121 ;;		On entry : 0/0
+  2122 ;;		On exit  : 0/0
+  2123 ;;		Unchanged: 0/0
+  2124 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2125 ;;      Params:         0       0       0       0
+  2126 ;;      Locals:         0       0       0       0
+  2127 ;;      Temps:          1       0       0       0
+  2128 ;;      Totals:         1       0       0       0
+  2129 ;;Total ram usage:        1 bytes
+  2130 ;; Hardware stack levels used:    1
+  2131 ;; Hardware stack levels required when called:    1
+  2132 ;; This function calls:
+  2133 ;;		Nothing
+  2134 ;; This function is called by:
+  2135 ;;		_main
+  2136 ;; This function uses a non-reentrant model
+  2137 ;;
+  2138                           
+  2139                           
+  2140                           ;psect for function _cancela_init
+  2141  01A3                     _cancela_init:	
+  2142                           
+  2143                           ;cancela.c: 126: TRISA |= (0b00001000 | 0b00010000 | 0b00100000);
+  2144                           
+  2145                           ;incstack = 0
+  2146                           ; Regs used in _cancela_init: [wreg+status,2+status,0]
+  2147  01A3  3038               	movlw	56
+  2148  01A4  00F4               	movwf	??_cancela_init
+  2149  01A5  0874               	movf	??_cancela_init,w
+  2150  01A6  1683               	bsf	3,5	;RP0=1, select bank1
+  2151  01A7  1303               	bcf	3,6	;RP1=0, select bank1
+  2152  01A8  0485               	iorwf	5,f	;volatile
+  2153                           
+  2154                           ;cancela.c: 129: TRISB &= ~(0b00000001);
+  2155  01A9  30FE               	movlw	254
+  2156  01AA  00F4               	movwf	??_cancela_init
+  2157  01AB  0874               	movf	??_cancela_init,w
+  2158  01AC  0586               	andwf	6,f	;volatile
+  2159                           
+  2160                           ;cancela.c: 131: PORTBbits.RB0 = 0;
+  2161  01AD  1283               	bcf	3,5	;RP0=0, select bank0
+  2162  01AE  1303               	bcf	3,6	;RP1=0, select bank0
+  2163  01AF  1006               	bcf	6,0	;volatile
+  2164                           
+  2165                           ;cancela.c: 133: cancela_entrada = CANCELA_INIT;
+  2166  01B0  01F8               	clrf	_cancela_entrada
+  2167                           
+  2168                           ;cancela.c: 134: cancela_saida = CANCELA_INIT;
+  2169  01B1  01F7               	clrf	_cancela_saida
+  2170  01B2  0008               	return
+  2171  01B3                     __end_of_cancela_init:	
+  2172                           
+  2173                           	psect	text22
+  2174  00A3                     __ptext22:	
+  2175 ;; *************** function _tc_int *****************
+  2176 ;; Defined at:
+  2177 ;;		line 15 in file "timer.c"
+  2178 ;; Parameters:    Size  Location     Type
+  2179 ;;		None
+  2180 ;; Auto vars:     Size  Location     Type
+  2181 ;;		None
+  2182 ;; Return value:  Size  Location     Type
+  2183 ;;                  1    wreg      void 
+  2184 ;; Registers used:
+  2185 ;;		wreg, status,2, status,0
+  2186 ;; Tracked objects:
+  2187 ;;		On entry : 0/0
+  2188 ;;		On exit  : 0/0
+  2189 ;;		Unchanged: 0/0
+  2190 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  2191 ;;      Params:         0       0       0       0
+  2192 ;;      Locals:         0       0       0       0
+  2193 ;;      Temps:          4       0       0       0
+  2194 ;;      Totals:         4       0       0       0
+  2195 ;;Total ram usage:        4 bytes
+  2196 ;; Hardware stack levels used:    1
+  2197 ;; This function calls:
+  2198 ;;		Nothing
+  2199 ;; This function is called by:
+  2200 ;;		Interrupt level 1
+  2201 ;; This function uses a non-reentrant model
+  2202 ;;
+  2203                           
+  2204                           
+  2205                           ;psect for function _tc_int
+  2206  00A3                     _tc_int:	
+  2207                           
+  2208                           ;timer.c: 17: if(INTCONbits.T0IF){
+  2209  00A3  1D0B               	btfss	11,2	;volatile
+  2210  00A4  28C9               	goto	i1l155
+  2211                           
+  2212                           ;timer.c: 19: INTCONbits.T0IF = 0;
+  2213  00A5  110B               	bcf	11,2	;volatile
+  2214                           
+  2215                           ;timer.c: 21: if(!timer_motor)
+  2216  00A6  0834               	movf	_timer_motor,w
+  2217  00A7  0435               	iorwf	_timer_motor+1,w
+  2218  00A8  1D03               	btfss	3,2
+  2219  00A9  28B0               	goto	i1l1045
+  2220                           
+  2221                           ;timer.c: 22: timer_motor--;
+  2222  00AA  3001               	movlw	1
+  2223  00AB  02B4               	subwf	_timer_motor,f
+  2224  00AC  3000               	movlw	0
+  2225  00AD  1C03               	skipc
+  2226  00AE  03B5               	decf	_timer_motor+1,f
+  2227  00AF  02B5               	subwf	_timer_motor+1,f
+  2228  00B0                     i1l1045:	
+  2229                           
+  2230                           ;timer.c: 24: if(!timer_signal)
+  2231  00B0  0838               	movf	_timer_signal,w
+  2232  00B1  0439               	iorwf	_timer_signal+1,w
+  2233  00B2  1D03               	btfss	3,2
+  2234  00B3  28BA               	goto	i1l1049
+  2235                           
+  2236                           ;timer.c: 25: timer_signal--;
+  2237  00B4  30FF               	movlw	255
+  2238  00B5  07B8               	addwf	_timer_signal,f
+  2239  00B6  1803               	skipnc
+  2240  00B7  0AB9               	incf	_timer_signal+1,f
+  2241  00B8  30FF               	movlw	255
+  2242  00B9  07B9               	addwf	_timer_signal+1,f
+  2243  00BA                     i1l1049:	
+  2244                           
+  2245                           ;timer.c: 27: if(!timer_close)
+  2246  00BA  0836               	movf	_timer_close,w
+  2247  00BB  0437               	iorwf	_timer_close+1,w
+  2248  00BC  1D03               	btfss	3,2
+  2249  00BD  28C4               	goto	i1l1053
+  2250                           
+  2251                           ;timer.c: 28: timer_close--;
+  2252  00BE  30FF               	movlw	255
+  2253  00BF  07B6               	addwf	_timer_close,f
+  2254  00C0  1803               	skipnc
+  2255  00C1  0AB7               	incf	_timer_close+1,f
+  2256  00C2  30FF               	movlw	255
+  2257  00C3  07B7               	addwf	_timer_close+1,f
+  2258  00C4                     i1l1053:	
+  2259                           
+  2260                           ;timer.c: 30: if(debounce_botao)
+  2261  00C4  0879               	movf	_debounce_botao,w
+  2262  00C5  1903               	btfsc	3,2
+  2263  00C6  28C9               	goto	i1l155
+  2264                           
+  2265                           ;timer.c: 31: debounce_botao--;
+  2266  00C7  3001               	movlw	1
+  2267  00C8  02F9               	subwf	_debounce_botao,f
+  2268  00C9                     i1l155:	
+  2269  00C9  0873               	movf	??_tc_int+3,w
+  2270  00CA  00FF               	movwf	127
+  2271  00CB  0872               	movf	??_tc_int+2,w
+  2272  00CC  008A               	movwf	10
+  2273  00CD  0871               	movf	??_tc_int+1,w
+  2274  00CE  0084               	movwf	4
+  2275  00CF  0E70               	swapf	??_tc_int^(0+-128),w
+  2276  00D0  0083               	movwf	3
+  2277  00D1  0EFE               	swapf	126,f
+  2278  00D2  0E7E               	swapf	126,w
+  2279  00D3  0009               	retfie
+  2280  00D4                     __end_of_tc_int:	
+  2281  0004                     
+  2282                           	psect	intentry
+  2283  0004                     __pintentry:	
+  2284                           ;incstack = 0
+  2285                           ; Regs used in _tc_int: [wreg+status,2+status,0]
+  2286                           
+  2287  0004                     interrupt_function:	
+  2288  007E                     saved_w	set	btemp
+  2289  0004  00FE               	movwf	btemp
+  2290  0005  0E03               	swapf	3,w
+  2291  0006  00F0               	movwf	??_tc_int
+  2292  0007  0804               	movf	4,w
+  2293  0008  00F1               	movwf	??_tc_int+1
+  2294  0009  080A               	movf	10,w
+  2295  000A  00F2               	movwf	??_tc_int+2
+  2296  000B  1283               	bcf	3,5	;RP0=0, select bank0
+  2297  000C  1303               	bcf	3,6	;RP1=0, select bank0
+  2298  000D  087F               	movf	btemp+1,w
+  2299  000E  00F3               	movwf	??_tc_int+3
+  2300  000F  28A3               	ljmp	_tc_int
+  2301                           
+  2302                           	psect	functab
+  2303  002D                     __pfunctab:	
+  2304  002D                     __fptable:	
+  2305  002D                     fptable:	
+  2306  002D  00FF               	movwf	(btemp+1)& (0+127)
+  2307  002E  3000               	movlw	high fptable
+  2308  002F  008A               	movwf	10
+  2309  0030  087F               	movf	(btemp+1)& (0+127),w
+  2310  0031  0782               	addwf	2,f
+  2311  0032                     fpbase:	
+  2312  0032  2832               	goto	fpbase	; Call via a null pointer and you will get stuck here.
+  2313  0033                     fp__motor_entrada_set:	
+  2314  0033                     entry__motor_entrada_set:	
+  2315  0033  292A               	ljmp	_motor_entrada_set
+  2316  0034                     fp__motor_saida_set:	
+  2317  0034                     entry__motor_saida_set:	
+  2318  0034  28D4               	ljmp	_motor_saida_set
+  2319  0035                     __end_of__fptable:	
+  2320  007E                     btemp	set	126	;btemp
+  2321  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        7
+    BSS         12
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      7      10
+    BANK0            80     10      26
+    BANK1            80      0       0
+    BANK2            48      0       0
+
+Pointer List with Targets:
+
+    motor_off@motor.set	PTR FTN(unsigned char ,)void  size(1) Largest target is 1
+		 -> motor_saida_set(), motor_entrada_set(), 
+
+    motor_off@motor	PTR struct . size(1) Largest target is 5
+		 -> motor_saida(BANK0[5]), motor_entrada(BANK0[5]), 
+
+    motor_start@motor.set	PTR FTN(unsigned char ,)void  size(1) Largest target is 1
+		 -> motor_saida_set(), motor_entrada_set(), 
+
+    motor_start@motor	PTR struct . size(1) Largest target is 5
+		 -> motor_saida(BANK0[5]), motor_entrada(BANK0[5]), 
+
+    motor_handle@motor.set	PTR FTN(unsigned char ,)void  size(1) Largest target is 1
+		 -> motor_saida_set(), motor_entrada_set(), 
+
+    motor_handle@motor	PTR struct . size(1) Largest target is 5
+		 -> motor_saida(BANK0[5]), motor_entrada(BANK0[5]), 
+
+    motor_saida.set	PTR FTN(unsigned char ,)void  size(1) Largest target is 1
+		 -> motor_saida_set(), motor_entrada_set(), 
+
+    S190$set	PTR FTN(unsigned char ,)void  size(1) Largest target is 1
+		 -> motor_saida_set(), motor_entrada_set(), 
+
+    motor_entrada.set	PTR FTN(unsigned char ,)void  size(1) Largest target is 1
+		 -> motor_saida_set(), motor_entrada_set(), 
+
+
+Critical Paths under _main in COMMON
+
+    _motor_handle->_motor_entrada_set
+    _motor_handle->_motor_saida_set
+    _motor_init->_motor_entrada_init
+    _motor_init->_motor_saida_init
+    _motor_saida_init->_motor_off
+    _motor_saida_init->_motor_saida_set
+    _motor_entrada_init->_motor_entrada_set
+    _motor_entrada_init->_motor_off
+    _cancela_entrada_open->_motor_start
+    _cancela_entrada_close->_motor_start
+
+Critical Paths under _tc_int in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _motor_task->_motor_handle
+    _handle_cancela_entrada->_cancela_entrada_close
+    _handle_cancela_entrada->_cancela_entrada_open
+    _cancela_entrada_open->_motor_start
+    _cancela_entrada_close->_motor_start
+
+Critical Paths under _tc_int in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _tc_int in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _tc_int in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0    3965
+                       _cancela_init
+                       _cancela_task
+                           _ihm_init
+                           _key_read
+                         _motor_init
+                         _motor_task
+               _request_print_ticket
+                        _timer0_init
+ ---------------------------------------------------------------------------------
+ (1) _timer0_init                                          0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _request_print_ticket                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _motor_task                                           0     0      0    1067
+                       _motor_handle
+ ---------------------------------------------------------------------------------
+ (2) _motor_handle                                        10    10      0    1067
+                                              0 BANK0     10    10      0
+                  _motor_entrada_set *
+                    _motor_saida_set *
+ ---------------------------------------------------------------------------------
+ (1) _motor_init                                           0     0      0     772
+                 _motor_entrada_init
+                   _motor_saida_init
+ ---------------------------------------------------------------------------------
+ (2) _motor_saida_init                                     1     1      0     413
+                                              6 COMMON     1     1      0
+                          _motor_off
+                    _motor_saida_set
+ ---------------------------------------------------------------------------------
+ (3) _motor_saida_set                                      2     1      1     243
+                                              4 COMMON     2     1      1
+ ---------------------------------------------------------------------------------
+ (2) _motor_entrada_init                                   1     1      0     359
+                                              6 COMMON     1     1      0
+                  _motor_entrada_set
+                          _motor_off
+ ---------------------------------------------------------------------------------
+ (3) _motor_off                                            2     2      0     170
+                                              4 COMMON     2     2      0
+ ---------------------------------------------------------------------------------
+ (3) _motor_entrada_set                                    2     1      1     189
+                                              4 COMMON     2     1      1
+ ---------------------------------------------------------------------------------
+ (1) _key_read                                             1     1      0       0
+                                              4 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _ihm_init                                             1     1      0       0
+                                              4 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _cancela_task                                         0     0      0    2126
+             _handle_cancela_entrada
+               _handle_cancela_saida
+ ---------------------------------------------------------------------------------
+ (2) _handle_cancela_saida                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _handle_cancela_entrada                               0     0      0    2126
+              _cancela_entrada_close
+               _cancela_entrada_open
+                          _ticket_ok
+           _veiculo_presente_entrada
+ ---------------------------------------------------------------------------------
+ (3) _veiculo_presente_entrada                             0     0      0       0
+ ---------------------------------------------------------------------------------
+ (3) _ticket_ok                                            1     1      0       0
+                                              4 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (3) _cancela_entrada_open                                 1     1      0    1063
+                                              1 BANK0      1     1      0
+                        _motor_start
+ ---------------------------------------------------------------------------------
+ (3) _cancela_entrada_close                                1     1      0    1063
+                                              1 BANK0      1     1      0
+                        _motor_start
+ ---------------------------------------------------------------------------------
+ (4) _motor_start                                          4     2      2    1063
+                                              4 COMMON     3     1      2
+                                              0 BANK0      1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _cancela_init                                         1     1      0       0
+                                              4 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 4
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (5) _tc_int                                               4     4      0       0
+                                              0 COMMON     4     4      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 5
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _cancela_init
+   _cancela_task
+     _handle_cancela_entrada
+       _cancela_entrada_close
+         _motor_start
+       _cancela_entrada_open
+         _motor_start
+       _ticket_ok
+       _veiculo_presente_entrada
+     _handle_cancela_saida
+   _ihm_init
+   _key_read
+   _motor_init
+     _motor_entrada_init
+       _motor_entrada_set
+       _motor_off
+     _motor_saida_init
+       _motor_off
+       _motor_saida_set
+   _motor_task
+     _motor_handle
+       _motor_entrada_set *
+       _motor_saida_set *
+   _request_print_ticket
+   _timer0_init
+
+ _tc_int (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               30      0       0       9        0.0%
+BITBANK2            30      0       0       8        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      A      1A       3       32.5%
+BITBANK0            50      0       0       5        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      7       A       1       71.4%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      24      10        0.0%
+ABS                  0      0      24       4        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              80      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.44 build -154322312 
+Symbol Table                                                                                   Tue Oct 03 09:45:28 2017
+
+                                pc 0002                        __CFG_CP$OFF 0000  
+                               l23 01D6                  _motor_entrada_set 012A  
+                      __CFG_LVP$ON 0000                                l817 01BB  
+                              u160 01C0                       __CFG_CPD$OFF 0000  
+                              u554 0067                                u555 0064  
+                              u574 0080                                u575 007D  
+                ??_motor_saida_set 0075                 ?_motor_entrada_set 0074  
+                              fsr0 0004                                indf 0000  
+               _motor_entrada_init 017F                  ?_motor_saida_init 0070  
+                             l1111 006D                               l1113 0073  
+              ??_motor_entrada_set 0075                               l1123 0098  
+                             l1117 0088                               l1093 0128  
+                             l1087 0119                               l1099 0042  
+                     __CFG_WDTE$ON 0000                               _TMR0 0001  
+               ??_motor_saida_init 0076                ?_motor_entrada_init 0070  
+                             _main 01D1                               btemp 007E  
+                    __CFG_BOREN$ON 0000                               start 0010  
+                    __CFG_MCLRE$ON 0000                   motor_handle@step 0032  
+        __end_of_motor_entrada_set 0153               ??_motor_entrada_init 0076  
+                            ?_main 0070      __size_of_request_print_ticket 000A  
+                            _T1CON 0010                              i1l155 00C9  
+                            _TRISA 0085                              _TRISB 0086  
+                            fpbase 0032                              pclath 000A  
+                            status 0003                              wtemp0 007E  
+          ??_cancela_entrada_close 002B                    __initialization 0011  
+                motor_handle@coils 0031                       __end_of_main 01DF  
+                motor_handle@motor 0033                             ??_main 0077  
+            __size_of_cancela_init 0010              __size_of_cancela_task 0003  
+                           i1l1053 00C4                             i1l1045 00B0  
+                           i1l1049 00BA                     _debounce_botao 0079  
+                 __end_of__fptable 0035                     __CFG_PWRTE$OFF 0000  
+     __end_of_cancela_entrada_open 01ED       __end_of_handle_cancela_saida 023A  
+         _veiculo_presente_entrada 0217                   __end_of_ihm_init 0228  
+                     ?_timer0_init 0070                       _cancela_init 01A3  
+                     _cancela_task 0235         __size_of_motor_entrada_set 0029  
+                 __end_of_key_read 01C2                             _tc_int 00A3  
+                     ?_motor_start 0074                             fptable 002D  
+                     __pdataCOMMON 0079                             fptotal 0004  
+                           saved_w 007E               motor_start@direction 0074  
+         ??_handle_cancela_entrada 0077            __end_of__initialization 002B  
+                  _motor_saida_set 00D4                     __pcstackCOMMON 0070  
+                     __pidataBANK0 022F                         __pbssBANK0 0020  
+                       __pmaintext 01D1          __size_of_motor_saida_init 0013  
+                       __pintentry 0004                            ?_tc_int 0070  
+               __size_of_ticket_ok 0007                 __size_of_motor_off 000D  
+             _cancela_entrada_open 01DF               _handle_cancela_saida 0239  
+                        ?_ihm_init 0070       __end_of_request_print_ticket 020E  
+  __size_of_handle_cancela_entrada 002B            __end_of_motor_saida_set 00FF  
+                        ?_key_read 0070                   motor_start@motor 002A  
+   __size_of_cancela_entrada_close 000F      __end_of_cancela_entrada_close 01D1  
+                  __size_of_tc_int 0031                      _cancela_saida 0077  
+             __size_of_timer0_init 000A                            __ptext1 01FA  
+                          __ptext2 0204                            __ptext3 0192  
+                          __ptext4 0035                            __ptext5 020E  
+                          __ptext6 016C                            __ptext7 012A  
+                          __ptext8 00D4                            __ptext9 017F  
+      __size_of_motor_entrada_init 0013               __size_of_motor_start 0019  
+            ?_cancela_entrada_open 0070                      ?_motor_handle 0076  
+            ?_handle_cancela_saida 0070               end_of_initialization 002B  
+             fp__motor_entrada_set 0033                   _motor_handle$420 002D  
+                 _motor_handle$421 002F                         ??_ihm_init 0074  
+       ??_veiculo_presente_entrada 0074                         ??_key_read 0074  
+                __end_of_ticket_ok 022F                  __end_of_motor_off 01FA  
+                       _motor_init 020E                         _motor_task 0192  
+           _handle_cancela_entrada 00FF                          _PORTAbits 0005  
+                        _PORTBbits 0006                     ??_motor_handle 002A  
+                 ?_motor_saida_set 0074                   _motor_saida_init 016C  
+          entry__motor_entrada_set 0033                      __pidataCOMMON 0238  
+             _request_print_ticket 0204                     __end_of_tc_int 00D4  
+           ??_cancela_entrada_open 002B                start_initialization 0011  
+           ??_handle_cancela_saida 0074                        ?_motor_init 0070  
+                      ?_motor_task 0070                        __pdataBANK0 0034  
+                         ??_tc_int 0070              ?_request_print_ticket 0070  
+                      __pbssCOMMON 0077                          ___latbits 0000  
+                    __pcstackBANK0 002A                  __size_of__fptable 0008  
+ __end_of_veiculo_presente_entrada 0220                  __size_of_ihm_init 0008  
+                __size_of_key_read 000F                    _cancela_entrada 0078  
+             __end_of_motor_handle 00A3                          __pfunctab 002D  
+              __size_of_motor_init 0009                __size_of_motor_task 0011  
+                interrupt_function 0004                           _PIE1bits 008C  
+                         _PIR1bits 000C                          _ticket_ok 0228  
+            _cancela_entrada_close 01C2            ?_handle_cancela_entrada 0070  
+                        _motor_off 01ED                      ??_timer0_init 0074  
+                    ?_cancela_init 0070                      ?_cancela_task 0070  
+       __end_of_motor_entrada_init 0192             ??_request_print_ticket 0074  
+                    ??_motor_start 0076           __end_of_motor_saida_init 017F  
+                   motor_off@motor 0075                  motor_start@voltas 0075  
+   __end_of_handle_cancela_entrada 012A                         ?_ticket_ok 0070  
+                   ??_cancela_init 0074                     ??_cancela_task 0077  
+                       ?_motor_off 0074                      _motor_entrada 0025  
+__size_of_veiculo_presente_entrada 0009          ?_veiculo_presente_entrada 0070  
+              __end_of_timer0_init 0204                           __fptable 002D  
+                         __ptext10 01ED                           __ptext11 01B3  
+                         __ptext20 0153                           __ptext12 0220  
+                         __ptext21 01A3                           __ptext13 0235  
+                         __ptext22 00A3                           __ptext14 0239  
+                         __ptext15 00FF                           __ptext16 0217  
+                         __ptext17 0228                           __ptext18 01DF  
+                         __ptext19 01C2                __end_of_motor_start 016C  
+                         _ihm_init 0220                           _key_read 01B3  
+                    __size_of_main 000E              __size_of_motor_handle 006E  
+             motor_entrada_set@val 0074             ?_cancela_entrada_close 0070  
+         __size_of_motor_saida_set 002B                 fp__motor_saida_set 0034  
+                     ??_motor_init 0077                       ??_motor_task 0076  
+                       _INTCONbits 000B              entry__motor_saida_set 0034  
+    __size_of_cancela_entrada_open 000E                       _motor_handle 0035  
+    __size_of_handle_cancela_saida 0001                           intlevel1 002D  
+               __end_of_motor_init 0217                 __end_of_motor_task 01A3  
+               motor_saida_set@val 0074                        ??_ticket_ok 0074  
+                      ??_motor_off 0074                        _timer0_init 01FA  
+                     _timer_signal 0038                        _motor_saida 0020  
+                       _OPTION_REG 0081                        _motor_start 0153  
+                      _timer_close 0036                        _timer_motor 0034  
+             __end_of_cancela_init 01B3               __end_of_cancela_task 0238  
+               __CFG_FOSC$INTOSCIO 0000  
