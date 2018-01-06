@@ -1,0 +1,279 @@
+Version 3.2 HI-TECH Software Intermediate Code
+"313 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic10f200.h
+[v _TRISGPIO `VWuc ~T0 @X0 0 e@6 ]
+"267
+[v _GPIO `Vuc ~T0 @X0 0 e@6 ]
+[v F124 `(v ~T0 @X0 1 tf1`ul ]
+"153 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic.h
+[v __delay `JF124 ~T0 @X0 0 e ]
+[p i __delay ]
+"273 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic10f200.h
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . GP0 GP1 GP2 GP3 ]
+"272
+[u S15 `S16 1 ]
+[n S15 . . ]
+"280
+[v _GPIObits `VS15 ~T0 @X0 0 e@6 ]
+[p mainexit ]
+"13 main.c
+[p x WDTE=OFF ]
+"14
+[p x CP=OFF ]
+"15
+[p x MCLRE=OFF ]
+[; ;stdbool.h: 12: typedef unsigned char bool;
+[; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
+[; ;htc.h: 28: extern double __fpnormalize(double);
+[; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
+[; ;pic10f200.h: 50: extern volatile unsigned char INDF @ 0x000;
+"52 C:\Program Files (x86)\Microchip\xc8\v1.44\include\pic10f200.h
+[; ;pic10f200.h: 52: asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+[; ;pic10f200.h: 55: typedef union {
+[; ;pic10f200.h: 56: struct {
+[; ;pic10f200.h: 57: unsigned INDF :8;
+[; ;pic10f200.h: 58: };
+[; ;pic10f200.h: 59: } INDFbits_t;
+[; ;pic10f200.h: 60: extern volatile INDFbits_t INDFbits @ 0x000;
+[; ;pic10f200.h: 70: extern volatile unsigned char TMR0 @ 0x001;
+"72
+[; ;pic10f200.h: 72: asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+[; ;pic10f200.h: 75: typedef union {
+[; ;pic10f200.h: 76: struct {
+[; ;pic10f200.h: 77: unsigned TMR0 :8;
+[; ;pic10f200.h: 78: };
+[; ;pic10f200.h: 79: } TMR0bits_t;
+[; ;pic10f200.h: 80: extern volatile TMR0bits_t TMR0bits @ 0x001;
+[; ;pic10f200.h: 90: extern volatile unsigned char PCL @ 0x002;
+"92
+[; ;pic10f200.h: 92: asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+[; ;pic10f200.h: 95: typedef union {
+[; ;pic10f200.h: 96: struct {
+[; ;pic10f200.h: 97: unsigned PCL :8;
+[; ;pic10f200.h: 98: };
+[; ;pic10f200.h: 99: } PCLbits_t;
+[; ;pic10f200.h: 100: extern volatile PCLbits_t PCLbits @ 0x002;
+[; ;pic10f200.h: 110: extern volatile unsigned char STATUS @ 0x003;
+"112
+[; ;pic10f200.h: 112: asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+[; ;pic10f200.h: 115: typedef union {
+[; ;pic10f200.h: 116: struct {
+[; ;pic10f200.h: 117: unsigned C :1;
+[; ;pic10f200.h: 118: unsigned DC :1;
+[; ;pic10f200.h: 119: unsigned Z :1;
+[; ;pic10f200.h: 120: unsigned nPD :1;
+[; ;pic10f200.h: 121: unsigned nTO :1;
+[; ;pic10f200.h: 122: unsigned :2;
+[; ;pic10f200.h: 123: unsigned GPWUF :1;
+[; ;pic10f200.h: 124: };
+[; ;pic10f200.h: 125: struct {
+[; ;pic10f200.h: 126: unsigned CARRY :1;
+[; ;pic10f200.h: 127: unsigned :1;
+[; ;pic10f200.h: 128: unsigned ZERO :1;
+[; ;pic10f200.h: 129: };
+[; ;pic10f200.h: 130: } STATUSbits_t;
+[; ;pic10f200.h: 131: extern volatile STATUSbits_t STATUSbits @ 0x003;
+[; ;pic10f200.h: 176: extern volatile unsigned char FSR @ 0x004;
+"178
+[; ;pic10f200.h: 178: asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+[; ;pic10f200.h: 181: typedef union {
+[; ;pic10f200.h: 182: struct {
+[; ;pic10f200.h: 183: unsigned FSR :8;
+[; ;pic10f200.h: 184: };
+[; ;pic10f200.h: 185: } FSRbits_t;
+[; ;pic10f200.h: 186: extern volatile FSRbits_t FSRbits @ 0x004;
+[; ;pic10f200.h: 196: extern volatile unsigned char OSCCAL @ 0x005;
+"198
+[; ;pic10f200.h: 198: asm("OSCCAL equ 05h");
+[; <" OSCCAL equ 05h ;# ">
+[; ;pic10f200.h: 201: typedef union {
+[; ;pic10f200.h: 202: struct {
+[; ;pic10f200.h: 203: unsigned FOSC4 :1;
+[; ;pic10f200.h: 204: unsigned CAL :7;
+[; ;pic10f200.h: 205: };
+[; ;pic10f200.h: 206: struct {
+[; ;pic10f200.h: 207: unsigned :1;
+[; ;pic10f200.h: 208: unsigned CAL0 :1;
+[; ;pic10f200.h: 209: unsigned CAL1 :1;
+[; ;pic10f200.h: 210: unsigned CAL2 :1;
+[; ;pic10f200.h: 211: unsigned CAL3 :1;
+[; ;pic10f200.h: 212: unsigned CAL4 :1;
+[; ;pic10f200.h: 213: unsigned CAL5 :1;
+[; ;pic10f200.h: 214: unsigned CAL6 :1;
+[; ;pic10f200.h: 215: };
+[; ;pic10f200.h: 216: } OSCCALbits_t;
+[; ;pic10f200.h: 217: extern volatile OSCCALbits_t OSCCALbits @ 0x005;
+[; ;pic10f200.h: 267: extern volatile unsigned char GPIO @ 0x006;
+"269
+[; ;pic10f200.h: 269: asm("GPIO equ 06h");
+[; <" GPIO equ 06h ;# ">
+[; ;pic10f200.h: 272: typedef union {
+[; ;pic10f200.h: 273: struct {
+[; ;pic10f200.h: 274: unsigned GP0 :1;
+[; ;pic10f200.h: 275: unsigned GP1 :1;
+[; ;pic10f200.h: 276: unsigned GP2 :1;
+[; ;pic10f200.h: 277: unsigned GP3 :1;
+[; ;pic10f200.h: 278: };
+[; ;pic10f200.h: 279: } GPIObits_t;
+[; ;pic10f200.h: 280: extern volatile GPIObits_t GPIObits @ 0x006;
+[; ;pic10f200.h: 305: extern volatile __control unsigned char OPTION @ 0x000;
+[; ;pic10f200.h: 309: extern volatile __control unsigned char TRIS @ 0x006;
+[; ;pic10f200.h: 313: extern volatile __control unsigned char TRISGPIO @ 0x006;
+[; ;pic10f200.h: 335: extern volatile __bit CAL0 @ (((unsigned) &OSCCAL)*8) + 1;
+[; ;pic10f200.h: 337: extern volatile __bit CAL1 @ (((unsigned) &OSCCAL)*8) + 2;
+[; ;pic10f200.h: 339: extern volatile __bit CAL2 @ (((unsigned) &OSCCAL)*8) + 3;
+[; ;pic10f200.h: 341: extern volatile __bit CAL3 @ (((unsigned) &OSCCAL)*8) + 4;
+[; ;pic10f200.h: 343: extern volatile __bit CAL4 @ (((unsigned) &OSCCAL)*8) + 5;
+[; ;pic10f200.h: 345: extern volatile __bit CAL5 @ (((unsigned) &OSCCAL)*8) + 6;
+[; ;pic10f200.h: 347: extern volatile __bit CAL6 @ (((unsigned) &OSCCAL)*8) + 7;
+[; ;pic10f200.h: 349: extern volatile __bit CARRY @ (((unsigned) &STATUS)*8) + 0;
+[; ;pic10f200.h: 351: extern volatile __bit DC @ (((unsigned) &STATUS)*8) + 1;
+[; ;pic10f200.h: 353: extern volatile __bit FOSC4 @ (((unsigned) &OSCCAL)*8) + 0;
+[; ;pic10f200.h: 355: extern volatile __bit GP0 @ (((unsigned) &GPIO)*8) + 0;
+[; ;pic10f200.h: 357: extern volatile __bit GP1 @ (((unsigned) &GPIO)*8) + 1;
+[; ;pic10f200.h: 359: extern volatile __bit GP2 @ (((unsigned) &GPIO)*8) + 2;
+[; ;pic10f200.h: 361: extern volatile __bit GP3 @ (((unsigned) &GPIO)*8) + 3;
+[; ;pic10f200.h: 363: extern volatile __bit GPWUF @ (((unsigned) &STATUS)*8) + 7;
+[; ;pic10f200.h: 365: extern volatile __bit ZERO @ (((unsigned) &STATUS)*8) + 2;
+[; ;pic10f200.h: 367: extern volatile __bit nPD @ (((unsigned) &STATUS)*8) + 3;
+[; ;pic10f200.h: 369: extern volatile __bit nTO @ (((unsigned) &STATUS)*8) + 4;
+[; ;pic.h: 29: extern void __nop(void);
+[; ;pic.h: 153: extern __nonreentrant void _delay(unsigned long);
+[; ;pic.h: 155: extern __nonreentrant void _delaywdt(unsigned long);
+[; ;pic.h: 193: extern __bank0 unsigned char __resetbits;
+[; ;pic.h: 194: extern __bank0 __bit __powerdown;
+[; ;pic.h: 195: extern __bank0 __bit __timeout;
+"29 main.c
+[v _init `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 29: void init(void){
+[e :U _init ]
+[f ]
+[; ;main.c: 31: TRISGPIO = 0b00001000;
+"31
+[e = _TRISGPIO -> -> 8 `i `uc ]
+[; ;main.c: 32: GPIO = 0x00;
+"32
+[e = _GPIO -> -> 0 `i `uc ]
+[; ;main.c: 33: }
+"33
+[e :UE 17 ]
+}
+[v F134 `(uc ~T0 @X0 1 tf ]
+"41
+[v _space_free `TF134 ~T0 @X0 1 e ]
+{
+[; ;main.c: 41: inline bool space_free(){
+[e :U _space_free ]
+[f ]
+"43
+[v _tempo `s ~T0 @X0 1 a ]
+[; ;main.c: 43: short tempo = 5000;
+[e = _tempo -> -> 5000 `i `s ]
+[; ;main.c: 45: while(tempo > 0 && GPIObits.GP3 == 1) {
+"45
+[e $U 19  ]
+[e :U 20 ]
+{
+[; ;main.c: 47: _delay(1000);
+"47
+[e ( __delay (1 -> -> -> 1000 `i `l `ul ]
+[; ;main.c: 48: tempo--;
+"48
+[e -- _tempo -> -> 1 `i `s ]
+"49
+}
+[e :U 19 ]
+"45
+[e $ && > -> _tempo `i -> 0 `i == -> . . _GPIObits 0 3 `i -> 1 `i 20  ]
+[e :U 21 ]
+[; ;main.c: 49: }
+[; ;main.c: 51: return tempo==0;
+"51
+[e ) -> -> == -> _tempo `i -> 0 `i `i `uc ]
+[e $UE 18  ]
+[; ;main.c: 52: }
+"52
+[e :UE 18 ]
+}
+"55
+[v _update_status `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 55: void update_status(void){
+[e :U _update_status ]
+[f ]
+[; ;main.c: 57: if(space_free()){
+"57
+[e $ ! != -> ( _space_free ..  `i -> -> -> 0 `i `uc `i 23  ]
+{
+[; ;main.c: 59: GPIObits.GP2 = 0;
+"59
+[e = . . _GPIObits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 60: GPIObits.GP1 = 0;
+"60
+[e = . . _GPIObits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 61: GPIObits.GP0 = 1;
+"61
+[e = . . _GPIObits 0 0 -> -> 1 `i `uc ]
+"63
+}
+[; ;main.c: 63: }else{
+[e $U 24  ]
+[e :U 23 ]
+{
+[; ;main.c: 65: GPIObits.GP2 = 1;
+"65
+[e = . . _GPIObits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 66: GPIObits.GP1 = 1;
+"66
+[e = . . _GPIObits 0 1 -> -> 1 `i `uc ]
+[; ;main.c: 67: GPIObits.GP0 = 0;
+"67
+[e = . . _GPIObits 0 0 -> -> 0 `i `uc ]
+"68
+}
+[e :U 24 ]
+[; ;main.c: 68: }
+[; ;main.c: 69: }
+"69
+[e :UE 22 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"72
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 72: void main(void) {
+[e :U _main ]
+[f ]
+[; ;main.c: 74: init();
+"74
+[e ( _init ..  ]
+[; ;main.c: 76: while(1){
+"76
+[e :U 27 ]
+{
+[; ;main.c: 78: asm("clrwdt");
+"78
+[; <" clrwdt ;# ">
+[; ;main.c: 80: update_status();
+"80
+[e ( _update_status ..  ]
+"81
+}
+[e :U 26 ]
+"76
+[e $U 27  ]
+[e :U 28 ]
+[; ;main.c: 81: }
+[; ;main.c: 83: return;
+"83
+[e $UE 25  ]
+[; ;main.c: 84: }
+"84
+[e :UE 25 ]
+}
