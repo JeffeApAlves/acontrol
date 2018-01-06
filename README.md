@@ -1,2 +1,2 @@
-# Gerenciado de estacionamento
+# Gerenciador de estacionamento
 
